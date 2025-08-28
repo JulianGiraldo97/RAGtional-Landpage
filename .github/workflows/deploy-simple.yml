@@ -1,8 +1,7 @@
 name: Deploy to GitHub Pages (Simplified)
 
 on:
-  push:
-    branches: [ master, release ]
+
   pull_request:
     branches: [ master, release ]
   workflow_dispatch:

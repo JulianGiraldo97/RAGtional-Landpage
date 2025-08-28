@@ -8,12 +8,13 @@ This guide explains how to deploy the RAGtional React + TypeScript landing page 
 - Docker installed locally (for testing)
 - Node.js and npm installed locally
 
-## 🐳 Docker Configuration
+## 🚀 Vercel Configuration
 
 ### Files Created:
-- **`Dockerfile`** - Multi-stage build with Node.js and nginx
+- **`vercel.json`** - Vercel deployment configuration with static build
+- **`vercel-build.sh`** - Build script for Vercel deployment
+- **`Dockerfile`** - Multi-stage build with Node.js and nginx (for local testing)
 - **`nginx.conf`** - Optimized nginx configuration
-- **`vercel.json`** - Vercel deployment configuration
 - **`.dockerignore`** - Optimized Docker build context
 - **`docker-compose.yml`** - Local testing configuration
 
@@ -66,17 +67,17 @@ vercel
 - Go to [vercel.com/dashboard](https://vercel.com/dashboard)
 - Click "New Project"
 - Import your GitHub repository
-- Vercel will automatically detect the Dockerfile
+- Vercel will automatically detect the configuration
 
 #### 2. Configure Project
 - **Framework Preset**: Other
-- **Build Command**: Leave empty (Docker handles this)
-- **Output Directory**: Leave empty (Docker handles this)
-- **Install Command**: Leave empty (Docker handles this)
+- **Build Command**: `npm run vercel-build`
+- **Output Directory**: `build`
+- **Install Command**: `npm ci`
 
 #### 3. Deploy
 - Click "Deploy"
-- Vercel will build and deploy your Docker container
+- Vercel will build and deploy your application
 
 ## ⚙️ Configuration
 

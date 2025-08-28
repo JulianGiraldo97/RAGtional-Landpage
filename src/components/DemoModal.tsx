@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import emailjs from '@emailjs/browser';
+import { EMAILJS_CONFIG, EMAILJS_TEMPLATES } from '../config/emailjs';
 
 interface DemoModalProps {
   isOpen: boolean;
@@ -6,6 +8,7 @@ interface DemoModalProps {
 }
 
 const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
+  const formRef = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -15,6 +18,7 @@ const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -26,22 +30,51 @@ const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
+    // Basic validation
+    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
+      setErrorMessage('Please fill in all required fields.');
+      return;
+    }
+
+    // Email format validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      setErrorMessage('Please enter a valid email address.');
+      return;
+    }
+
+    setIsSubmitting(true);
+    setErrorMessage('');
+    
+    try {
+      // Send email using EmailJS
+      const result = await emailjs.sendForm(
+        EMAILJS_CONFIG.SERVICE_ID,
+        EMAILJS_TEMPLATES.DEMO_REQUEST,
+        formRef.current!,
+        EMAILJS_CONFIG.PUBLIC_KEY
+      );
+      
+      if (result.status === 200) {
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', company: '', message: '' });
+        
+        // Reset success message after 5 seconds
+        setTimeout(() => setSubmitStatus('idle'), 5000);
+        
+        // Log to console as requested
+        console.log('Demo Request Submitted via EmailJS:', formData);
+      } else {
+        throw new Error('Email sending failed');
+      }
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      setSubmitStatus('error');
+      setErrorMessage('Failed to send demo request. Please try again or contact us directly.');
+    } finally {
       setIsSubmitting(false);
-      setSubmitStatus('success');
-      
-      // Log to console as requested
-      console.log('Demo Request Submitted:', formData);
-      
-      // Reset form
-      setFormData({ name: '', email: '', company: '', message: '' });
-      
-      // Reset success message after 3 seconds
-      setTimeout(() => setSubmitStatus('idle'), 3000);
-    }, 1500);
+    }
   };
 
   const handleBackdropClick = (e: React.MouseEvent) => {
@@ -107,7 +140,27 @@ const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
                 </div>
               )}
 
-              <form onSubmit={handleSubmit}>
+              {submitStatus === 'error' && (
+                <div className="alert alert-danger alert-dismissible fade show" role="alert">
+                  <i className="fas fa-exclamation-triangle me-2"></i>
+                  {errorMessage}
+                  <button 
+                    type="button" 
+                    className="btn-close" 
+                    onClick={() => setSubmitStatus('idle')}
+                    aria-label="Close"
+                  ></button>
+                </div>
+              )}
+
+              {errorMessage && submitStatus === 'idle' && (
+                <div className="alert alert-warning" role="alert">
+                  <i className="fas fa-info-circle me-2"></i>
+                  {errorMessage}
+                </div>
+              )}
+
+              <form ref={formRef} onSubmit={handleSubmit}>
                 <div className="row">
                   <div className="col-md-6 mb-3">
                     <label htmlFor="demo-name" className="form-label fw-bold">

@@ -31,10 +31,9 @@ const Footer: React.FC = () => {
   };
 
   const socialLinks = [
-    { name: 'Twitter', icon: 'fab fa-twitter', href: '#' },
-    { name: 'LinkedIn', icon: 'fab fa-linkedin', href: '#' },
-    { name: 'GitHub', icon: 'fab fa-github', href: '#' },
-    { name: 'YouTube', icon: 'fab fa-youtube', href: '#' }
+    { name: 'LinkedIn', icon: 'fab fa-linkedin', href: 'https://www.linkedin.com/company/ragtional/about/' },
+    { name: 'GitHub', icon: 'fab fa-github', href: 'https://github.com/JulianGiraldo97/RAGtional-Landpage' },
+    { name: 'YouTube', icon: 'fab fa-youtube', href: 'https://www.youtube.com/@JGiraldoAI' }
   ];
 
   return (
@@ -48,7 +47,7 @@ const Footer: React.FC = () => {
                 <span className="text-primary">RAG</span>tional
               </h4>
             </div>
-            <p className="text-muted mb-3">
+            <p className="mb-3">
               Empowering businesses with intelligent AI solutions that transform 
               operations and unlock new possibilities through real-time knowledge processing.
             </p>
@@ -59,6 +58,8 @@ const Footer: React.FC = () => {
                   href={social.href}
                   className="social-link me-3"
                   aria-label={social.name}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <i className={`${social.icon} fa-lg`}></i>
                 </a>
@@ -146,7 +147,7 @@ const Footer: React.FC = () => {
 
           <div className="col-lg-6 mb-3">
             <h6 className="fw-bold mb-3">Newsletter</h6>
-            <p className="text-muted mb-3">
+            <p className="mb-3">
               Stay updated with the latest AI trends and RAGtional news.
             </p>
             <div className="input-group">
@@ -166,12 +167,12 @@ const Footer: React.FC = () => {
         {/* Bottom Bar */}
         <div className="row mt-4 pt-3 border-top border-secondary">
           <div className="col-md-6 mb-2">
-            <p className="text-muted mb-0">
+            <p className="mb-0">
               © {currentYear} RAGtional. All rights reserved.
             </p>
           </div>
           <div className="col-md-6 text-md-end mb-2">
-            <p className="text-muted mb-0">
+            <p className=" mb-0">
               Made with <i className="fas fa-heart text-danger"></i> for the AI community
             </p>
           </div>

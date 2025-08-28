@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import DemoModal from './DemoModal';
+import { EMAILJS_CONFIG, EMAILJS_TEMPLATES } from '../config/emailjs';
 
 const Contact: React.FC = () => {
+  const formRef = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -11,6 +14,7 @@ const Contact: React.FC = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -23,20 +27,51 @@ const Contact: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Basic validation
+    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
+      setErrorMessage('Please fill in all required fields.');
+      return;
+    }
+
+    // Email format validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      setErrorMessage('Please enter a valid email address.');
+      return;
+    }
+
     setIsSubmitting(true);
+    setErrorMessage('');
     
-    // Log to console as requested
-    console.log('Contact Form Submitted:', formData);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitStatus('success');
-      setFormData({ name: '', email: '', company: '', message: '' });
+    try {
+      // Send email using EmailJS
+      const result = await emailjs.sendForm(
+        EMAILJS_CONFIG.SERVICE_ID,
+        EMAILJS_TEMPLATES.CONTACT_FORM,
+        formRef.current!,
+        EMAILJS_CONFIG.PUBLIC_KEY
+      );
       
-      // Reset success message after 3 seconds
-      setTimeout(() => setSubmitStatus('idle'), 3000);
-    }, 1500);
+      if (result.status === 200) {
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', company: '', message: '' });
+        
+        // Reset success message after 5 seconds
+        setTimeout(() => setSubmitStatus('idle'), 5000);
+        
+        // Log to console as requested
+        console.log('Contact Form Submitted via EmailJS:', formData);
+      } else {
+        throw new Error('Email sending failed');
+      }
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      setSubmitStatus('error');
+      setErrorMessage('Failed to send message. Please try again or contact us directly.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -101,16 +136,13 @@ const Contact: React.FC = () => {
               <div className="social-links mt-4">
                 <h6 className="fw-bold mb-3">Follow Us</h6>
                 <div className="d-flex gap-3">
-                  <a href="#" className="social-link" aria-label="LinkedIn">
+                  <a href="https://www.linkedin.com/company/ragtional/about/" className="social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
                     <i className="fab fa-linkedin fa-lg"></i>
                   </a>
-                  <a href="#" className="social-link" aria-label="Twitter">
-                    <i className="fab fa-twitter fa-lg"></i>
-                  </a>
-                  <a href="#" className="social-link" aria-label="GitHub">
+                  <a href="https://github.com/JulianGiraldo97/RAGtional-Landpage" className="social-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
                     <i className="fab fa-github fa-lg"></i>
                   </a>
-                  <a href="#" className="social-link" aria-label="YouTube">
+                  <a href="https://www.youtube.com/@JGiraldoAI" className="social-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
                     <i className="fab fa-youtube fa-lg"></i>
                   </a>
                 </div>
@@ -138,7 +170,27 @@ const Contact: React.FC = () => {
                     </div>
                   )}
 
-                  <form onSubmit={handleSubmit}>
+                  {submitStatus === 'error' && (
+                    <div className="alert alert-danger alert-dismissible fade show" role="alert">
+                      <i className="fas fa-exclamation-triangle me-2"></i>
+                      {errorMessage}
+                      <button 
+                        type="button" 
+                        className="btn-close" 
+                        onClick={() => setSubmitStatus('idle')}
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                  )}
+
+                  {errorMessage && submitStatus === 'idle' && (
+                    <div className="alert alert-warning" role="alert">
+                      <i className="fas fa-info-circle me-2"></i>
+                      {errorMessage}
+                    </div>
+                  )}
+
+                  <form ref={formRef} onSubmit={handleSubmit}>
                     <div className="row">
                       <div className="col-md-6 mb-3">
                         <label htmlFor="name" className="form-label fw-bold">

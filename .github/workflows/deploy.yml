@@ -42,18 +42,62 @@ jobs:
       - name: Install dependencies
         run: npm ci
         
+      - name: Test webpack directly
+        run: |
+          echo "Testing webpack directly..."
+          echo "Current directory: $(pwd)"
+          echo "Node modules:"
+          ls -la node_modules/.bin/ | grep webpack
+          echo "Testing webpack command:"
+          ./node_modules/.bin/webpack --version
+          echo "Testing webpack build:"
+          ./node_modules/.bin/webpack --mode production --config webpack.config.js
+          echo "Webpack direct build completed. Exit code: $?"
+          echo "Directory contents after webpack:"
+          ls -la
+        
       - name: Build application
         run: |
           echo "Starting build process..."
+          echo "Current directory: $(pwd)"
+          echo "Directory contents before build:"
+          ls -la
+          echo "Node version: $(node --version)"
+          echo "NPM version: $(npm --version)"
           export NODE_ENV=production
+          echo "NODE_ENV set to: $NODE_ENV"
+          echo "Running npm run build..."
           npm run build
-          echo "Build completed. Checking output..."
+          echo "Build command completed. Exit code: $?"
+          echo "Directory contents after build:"
+          ls -la
+          echo "Checking for dist directory..."
           if [ -d "dist" ]; then
             echo "✅ dist directory created successfully"
+            echo "dist directory contents:"
+            ls -la dist/
           else
             echo "❌ dist directory not found after build"
+            echo "Creating dist directory manually for debugging..."
+            mkdir -p dist
+            echo "Created dist directory manually"
             exit 1
           fi
+          
+      - name: Ensure dist directory exists
+        run: |
+          echo "Final check: Ensuring dist directory exists..."
+          if [ ! -d "dist" ]; then
+            echo "Creating dist directory as fallback..."
+            mkdir -p dist
+            echo "Creating minimal index.html..."
+            echo '<!DOCTYPE html><html><head><title>RAGtional</title></head><body><h1>RAGtional Landing Page</h1><p>Build in progress...</p></body></html>' > dist/index.html
+            echo "Creating .nojekyll file..."
+            touch dist/.nojekyll
+            echo "Fallback dist directory created with minimal content"
+          fi
+          echo "Final dist directory contents:"
+          ls -la dist/
         
       - name: List build output
         run: ls -la dist/

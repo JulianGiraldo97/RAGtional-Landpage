@@ -6,7 +6,7 @@
   "homepage": "https://juliangiraldo97.github.io/RAGtional-Landpage",
   "scripts": {
     "start": "webpack serve --mode development",
-    "build": "webpack --mode production",
+    "build": "webpack --mode production --config webpack.config.js",
     "dev": "webpack serve --mode development --open",
     "test": "echo \"Error: no test specified\" && exit 1",
     "predeploy": "npm run build",

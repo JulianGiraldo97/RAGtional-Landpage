@@ -171,7 +171,7 @@ const UseCases: React.FC = () => {
         </div>
       </div>
       
-      <style jsx>{`
+      <style>{`
         .use-case-card {
           background: var(--bs-white);
           transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -217,7 +217,7 @@ const UseCases: React.FC = () => {
         }
         
         [data-bs-theme="dark"] .use-case-icon {
-          background: linear-gradient(135deg, rgba(0, 123, 255, 0.2), rgba(102, 16, 242, 0.2));
+          background: linear-gradient(135deg, rgba(0, 123, 255, 0.2), rgba(102, 123, 255, 0.2));
         }
         
         [data-bs-theme="dark"] .cta-section {

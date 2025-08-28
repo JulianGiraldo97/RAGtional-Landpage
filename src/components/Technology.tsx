@@ -102,7 +102,7 @@ const Technology: React.FC = () => {
         </div>
       </div>
       
-      <style jsx>{`
+      <style>{`
         .tech-item {
           background: var(--bs-white);
           transition: transform 0.3s ease, box-shadow 0.3s ease;

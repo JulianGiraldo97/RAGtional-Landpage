@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useTheme } from '../contexts/ThemeContext';
-import logo from '../assets/logo.svg';
+import Logo from '../assets/logo.svg';
 
 const Navbar: React.FC = () => {
   const { isDarkMode, toggleTheme } = useTheme();
@@ -21,7 +21,7 @@ const Navbar: React.FC = () => {
     }}>
       <div className="container">
         <a className="navbar-brand d-flex align-items-center" href="#">
-          <img src={logo} alt="RAGtional Logo" height="40" className="me-2" />
+          <Logo height="40" className="me-2" />
         </a>
         
         <button

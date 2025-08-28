@@ -261,7 +261,7 @@ const Contact: React.FC = () => {
         </div>
       </div>
       
-      <style jsx>{`
+      <style>{`
         .contact-item {
           display: flex;
           align-items: flex-start;
@@ -315,7 +315,7 @@ const Contact: React.FC = () => {
           background: rgba(0, 123, 255, 0.2);
         }
         
-        [data-bs-theme="dark"] .social-link {
+        [data-bs-theme="dark"] .social-icon {
           background: rgba(0, 123, 255, 0.2);
         }
         

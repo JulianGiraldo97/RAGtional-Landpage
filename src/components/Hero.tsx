@@ -1,5 +1,5 @@
 import React from 'react';
-import bannerImage from '../assets/banner.svg';
+import BannerImage from '../assets/banner.svg';
 
 const Hero: React.FC = () => {
   return (
@@ -31,21 +31,19 @@ const Hero: React.FC = () => {
             </div>
           </div>
           <div className="col-lg-6">
-            <div className="hero-visual text-center">
-              <div className="position-relative">
-                <img 
-                  src={bannerImage} 
-                  alt="RAGtional AI Solutions" 
-                  className="img-fluid rounded-3 shadow-lg"
-                  style={{ maxHeight: '400px', width: '100%', objectFit: 'cover' }}
-                />
+                          <div className="hero-visual text-center">
+                <div className="position-relative">
+                  <BannerImage 
+                    className="img-fluid rounded-3 shadow-lg"
+                    style={{ maxHeight: '400px', width: '100%' }}
+                  />
+                </div>
               </div>
-            </div>
           </div>
         </div>
       </div>
       
-      <style jsx>{`
+      <style>{`
         .hero-section {
           background: linear-gradient(135deg, var(--bs-light) 0%, var(--bs-white) 100%);
         }

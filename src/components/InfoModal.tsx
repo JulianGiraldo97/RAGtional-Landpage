@@ -120,7 +120,7 @@ const InfoModal: React.FC<InfoModalProps> = ({
         </div>
       </div>
       
-      <style jsx>{`
+      <style>{`
         .modal-backdrop {
           background-color: rgba(0, 0, 0, 0.5);
         }

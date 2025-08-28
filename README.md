@@ -54,6 +54,19 @@ npm run dev
 
 4. Open your browser and navigate to `http://localhost:3000`
 
+### 🖼️ **Assets Setup**
+
+The landing page currently uses placeholder SVG assets that you can replace with your actual company branding:
+
+- **Logo**: Replace `src/assets/logo.svg` with your company logo
+- **Banner**: Replace `src/assets/banner.svg` with your banner image
+
+**Recommended formats:**
+- **Logo**: SVG format (vector) for crisp display at any size
+- **Banner**: SVG or JPG/PNG format (1200x600px recommended)
+
+**Note**: The current SVG assets are placeholders that demonstrate the layout. Replace them with your actual branding for production use.
+
 ### Available Scripts
 
 - `npm run dev` - Start development server with hot reload

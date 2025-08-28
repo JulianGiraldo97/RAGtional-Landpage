@@ -148,7 +148,7 @@ const Solutions: React.FC = () => {
         </div>
       </div>
       
-      <style jsx>{`
+      <style>{`
         .solution-card {
           transition: transform 0.3s ease, box-shadow 0.3s ease;
           border-radius: 16px;

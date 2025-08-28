@@ -11,7 +11,7 @@ This guide explains how to deploy the RAGtional React + TypeScript landing page 
 ## Deployment Methods
 
 ### Method 1: GitHub Actions (Recommended)
-The repository includes a GitHub Actions workflow that automatically deploys on every push to the `main` or `release` branch.
+The repository includes a GitHub Actions workflow that automatically deploys on every push to the `master` or `release` branch.
 
 #### Setup Steps:
 1. **Enable GitHub Pages**:
@@ -21,11 +21,11 @@ The repository includes a GitHub Actions workflow that automatically deploys on 
    - Folder: `/ (root)`
    - Click "Save"
 
-2. **Push to Main Branch**:
+2. **Push to Master Branch**:
    ```bash
    git add .
    git commit -m "Setup deployment pipeline"
-   git push origin main
+   git push origin master
    ```
 
 3. **Monitor Deployment**:
@@ -193,4 +193,4 @@ After successful deployment:
 
 ---
 
-**Note**: This deployment pipeline is optimized for React applications and follows GitHub Pages best practices. The site will automatically update on every push to the main branch.
+**Note**: This deployment pipeline is optimized for React applications and follows GitHub Pages best practices. The site will automatically update on every push to the master branch.

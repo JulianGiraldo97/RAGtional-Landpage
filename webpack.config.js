@@ -55,5 +55,5 @@ module.exports = {
     hot: true,
     port: 3000,
   },
-  mode: 'development',
+  mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
 };

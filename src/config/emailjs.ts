@@ -4,10 +4,10 @@
 
 // Option 1: Hardcode your credentials here (for quick testing)
 export const EMAILJS_CONFIG = {
-  SERVICE_ID: 'your_service_id_here',
-  TEMPLATE_ID: 'your_template_id_here',
+  SERVICE_ID: 'service_y2lccll',
+  TEMPLATE_ID: 'template_ma8ygz9',
   USER_ID: 'your_user_id_here',
-  PUBLIC_KEY: 'your_public_key_here'
+  PUBLIC_KEY: '08y3DfC99ECkkf_TO'
 };
 
 // Option 2: Use environment variables (requires webpack configuration)

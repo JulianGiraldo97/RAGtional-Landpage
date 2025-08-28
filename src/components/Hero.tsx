@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import BannerImage from '../assets/banner.svg';
+import DemoModal from './DemoModal';
 
 const Hero: React.FC = () => {
+  const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
+
   return (
     <section className="hero-section d-flex align-items-center min-vh-100" style={{ paddingTop: '80px' }}>
       <div className="container">
@@ -19,7 +22,10 @@ const Hero: React.FC = () => {
                 Access real-time knowledge and automate complex workflows with unprecedented accuracy.
               </p>
               <div className="d-flex flex-wrap gap-3">
-                <button className="btn btn-primary btn-lg px-4 py-3">
+                <button 
+                  className="btn btn-primary btn-lg px-4 py-3"
+                  onClick={() => setIsDemoModalOpen(true)}
+                >
                   <i className="fas fa-play me-2"></i>
                   Get a Demo
                 </button>
@@ -59,6 +65,11 @@ const Hero: React.FC = () => {
           background-clip: text;
         }
       `}</style>
+      
+      <DemoModal 
+        isOpen={isDemoModalOpen}
+        onClose={() => setIsDemoModalOpen(false)}
+      />
     </section>
   );
 };

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import DemoModal from './DemoModal';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -10,6 +11,7 @@ const Contact: React.FC = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -22,6 +24,9 @@ const Contact: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    
+    // Log to console as requested
+    console.log('Contact Form Submitted:', formData);
     
     // Simulate form submission
     setTimeout(() => {
@@ -36,28 +41,16 @@ const Contact: React.FC = () => {
 
   const contactInfo = [
     {
-      icon: 'fas fa-map-marker-alt',
-      title: 'Visit Us',
-      content: '123 AI Boulevard, San Francisco, CA 94105',
-      link: '#'
-    },
-    {
       icon: 'fas fa-phone',
       title: 'Call Us',
-      content: '+1 (555) 123-4567',
-      link: 'tel:+15551234567'
+      content: '+57 3144798482',
+      link: 'tel:+573144798482'
     },
     {
       icon: 'fas fa-envelope',
       title: 'Email Us',
-      content: 'hello@ragtional.ai',
-      link: 'mailto:hello@ragtional.ai'
-    },
-    {
-      icon: 'fas fa-clock',
-      title: 'Business Hours',
-      content: 'Mon-Fri: 9AM-6PM PST',
-      link: '#'
+      content: 'julian09426@gmail.com',
+      link: 'mailto:julian09426@gmail.com'
     }
   ];
 
@@ -247,7 +240,10 @@ const Contact: React.FC = () => {
                 how RAGtional can transform your business operations.
               </p>
               <div className="d-flex justify-content-center flex-wrap gap-3">
-                <button className="btn btn-primary btn-lg px-4 py-3">
+                <button 
+                  className="btn btn-primary btn-lg px-4 py-3"
+                  onClick={() => setIsDemoModalOpen(true)}
+                >
                   <i className="fas fa-calendar me-2"></i>
                   Schedule Demo
                 </button>
@@ -324,6 +320,11 @@ const Contact: React.FC = () => {
           border-color: rgba(0, 123, 255, 0.2);
         }
       `}</style>
+      
+      <DemoModal 
+        isOpen={isDemoModalOpen}
+        onClose={() => setIsDemoModalOpen(false)}
+      />
     </section>
   );
 };

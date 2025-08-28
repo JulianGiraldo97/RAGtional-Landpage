@@ -129,17 +129,17 @@ const Footer: React.FC = () => {
           <div className="col-lg-6 mb-3">
             <h6 className="fw-bold mb-3">Contact Us</h6>
             <div className="contact-info">
-              <div className="d-flex align-items-center mb-2">
-                <i className="fas fa-envelope text-primary me-2"></i>
-                <span className="text-muted">hello@ragtional.ai</span>
+              <div className="d-flex align-items-center mb-3">
+                <i className="fas fa-envelope text-primary me-3"></i>
+                <a href="mailto:julian09426@gmail.com" className="text-light text-decoration-none fw-medium">
+                  julian09426@gmail.com
+                </a>
               </div>
-              <div className="d-flex align-items-center mb-2">
-                <i className="fas fa-phone text-primary me-2"></i>
-                <span className="text-muted">+1 (555) 123-4567</span>
-              </div>
-              <div className="d-flex align-items-center">
-                <i className="fas fa-map-marker-alt text-primary me-2"></i>
-                <span className="text-muted">San Francisco, CA</span>
+              <div className="d-flex align-items-center mb-3">
+                <i className="fas fa-phone text-primary me-3"></i>
+                <a href="tel:+573144798482" className="text-light text-decoration-none fw-medium">
+                  +57 3144798482
+                </a>
               </div>
             </div>
           </div>
@@ -183,47 +183,79 @@ const Footer: React.FC = () => {
           background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
         }
         
+        .footer-brand h4 {
+          color: var(--bs-light) !important;
+        }
+        
+        .footer-brand .text-primary {
+          color: var(--bs-primary) !important;
+        }
+        
         .social-link {
           display: inline-block;
-          width: 40px;
-          height: 40px;
+          width: 45px;
+          height: 45px;
           border-radius: 50%;
-          background: rgba(255, 255, 255, 0.1);
+          background: rgba(255, 255, 255, 0.15);
           text-align: center;
-          line-height: 40px;
+          line-height: 45px;
           transition: all 0.3s ease;
           color: var(--bs-light);
+          font-size: 1.1rem;
         }
         
         .social-link:hover {
           background: var(--bs-primary);
           color: var(--bs-white);
-          transform: translateY(-2px);
+          transform: translateY(-3px);
+          box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
         }
         
         .footer a:hover {
           color: var(--bs-primary) !important;
         }
         
-        .contact-info .text-muted {
-          font-size: 0.9rem;
+        .footer h6 {
+          color: var(--bs-light) !important;
+          font-weight: 600;
+        }
+        
+        .footer ul li a {
+          color: rgba(255, 255, 255, 0.8) !important;
+          transition: color 0.3s ease;
+        }
+        
+        .footer ul li a:hover {
+          color: var(--bs-primary) !important;
+        }
+        
+        .contact-info a {
+          transition: color 0.3s ease;
+        }
+        
+        .contact-info a:hover {
+          color: var(--bs-primary) !important;
         }
         
         .input-group .form-control {
-          border: 1px solid rgba(255, 255, 255, 0.2);
-          background: rgba(255, 255, 255, 0.1);
+          border: 1px solid rgba(255, 255, 255, 0.3);
+          background: rgba(255, 255, 255, 0.15);
           color: var(--bs-light);
         }
         
         .input-group .form-control::placeholder {
-          color: rgba(255, 255, 255, 0.6);
+          color: rgba(255, 255, 255, 0.7);
         }
         
         .input-group .form-control:focus {
-          background: rgba(255, 255, 255, 0.15);
+          background: rgba(255, 255, 255, 0.2);
           border-color: var(--bs-primary);
           color: var(--bs-light);
           box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+        }
+        
+        .border-secondary {
+          border-color: rgba(255, 255, 255, 0.2) !important;
         }
       `}</style>
     </footer>

@@ -12,6 +12,9 @@ build/
 *.tgz
 *.tar.gz
 
+# GitHub Pages deployment
+gh-pages/
+
 # Development and Environment
 .env
 .env.local

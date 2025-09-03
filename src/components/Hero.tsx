@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import BannerImage from '../assets/banner.svg';
 import DemoModal from './DemoModal';
 
 const Hero: React.FC = () => {
+  const { t } = useTranslation();
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
 
   return (
@@ -12,14 +14,12 @@ const Hero: React.FC = () => {
           <div className="col-lg-6">
             <div className="hero-content">
               <h1 className="display-3 fw-bold mb-4">
-                <span className="text-primary">RAG</span>tional:
+                <span className="text-primary">RAG</span>{t('hero.title')}
                 <br />
-                <span className="text-gradient">Smarter AI with Real-Time Knowledge</span>
+                <span className="text-gradient">{t('hero.subtitle')}</span>
               </h1>
               <p className="lead mb-4 text-muted">
-                Transform your business with cutting-edge AI solutions powered by Retrieval-Augmented Generation (RAG), 
-                Large Language Models (LLMs), intelligent agents, and custom chatbots. 
-                Access real-time knowledge and automate complex workflows with unprecedented accuracy.
+                {t('hero.description')}
               </p>
               <div className="d-flex flex-wrap gap-3">
                 <button 
@@ -27,11 +27,11 @@ const Hero: React.FC = () => {
                   onClick={() => setIsDemoModalOpen(true)}
                 >
                   <i className="fas fa-play me-2"></i>
-                  Get a Demo
+                  {t('hero.getDemo')}
                 </button>
                 <button className="btn btn-outline-primary btn-lg px-4 py-3">
                   <i className="fas fa-arrow-right me-2"></i>
-                  Learn More
+                  {t('hero.learnMore')}
                 </button>
               </div>
             </div>

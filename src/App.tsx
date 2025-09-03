@@ -7,6 +7,7 @@ import Technology from './components/Technology';
 import UseCases from './components/UseCases';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import './i18n';
 
 const App: React.FC = () => {
   return (

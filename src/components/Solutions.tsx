@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import InfoModal from './InfoModal';
 
 interface SolutionCardProps {
@@ -16,6 +17,7 @@ const SolutionCard: React.FC<SolutionCardProps> = ({
   features, 
   detailedDescription 
 }) => {
+  const { t } = useTranslation();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleLearnMore = () => {
@@ -56,7 +58,7 @@ const SolutionCard: React.FC<SolutionCardProps> = ({
               className="btn btn-outline-primary w-100"
               onClick={handleLearnMore}
             >
-              Learn More
+              {t('solutions.learnMore')}
             </button>
           </div>
         </div>
@@ -69,7 +71,7 @@ const SolutionCard: React.FC<SolutionCardProps> = ({
         description={detailedDescription}
         icon={icon}
         features={features}
-        ctaText="Get Started"
+        ctaText={t('solutions.getStarted')}
         onCtaClick={handleGetStarted}
       />
     </>
@@ -77,6 +79,7 @@ const SolutionCard: React.FC<SolutionCardProps> = ({
 };
 
 const Solutions: React.FC = () => {
+  const { t } = useTranslation();
   const solutions = [
     {
       icon: 'fas fa-project-diagram',
@@ -133,10 +136,9 @@ const Solutions: React.FC = () => {
       <div className="container">
         <div className="row text-center mb-5">
           <div className="col-lg-8 mx-auto">
-            <h2 className="display-5 fw-bold mb-3">Our Solutions</h2>
+            <h2 className="display-5 fw-bold mb-3">{t('solutions.title')}</h2>
             <p className="lead text-muted">
-              Comprehensive AI solutions designed to transform your business operations 
-              and unlock new possibilities with intelligent automation.
+              {t('solutions.description')}
             </p>
           </div>
         </div>

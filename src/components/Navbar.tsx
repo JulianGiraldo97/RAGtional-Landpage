@@ -1,18 +1,25 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useTheme } from '../contexts/ThemeContext';
 import Logo from '../assets/logo.svg';
 import DemoModal from './DemoModal';
 
 const Navbar: React.FC = () => {
+  const { t, i18n } = useTranslation();
   const { isDarkMode, toggleTheme } = useTheme();
   const [isNavCollapsed, setIsNavCollapsed] = useState(true);
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
 
+  const toggleLanguage = () => {
+    const newLang = i18n.language === 'en' ? 'es' : 'en';
+    i18n.changeLanguage(newLang);
+  };
+
   const navLinks = [
-    { name: 'Solutions', href: '#solutions' },
-    { name: 'Technology', href: '#technology' },
-    { name: 'Use Cases', href: '#use-cases' },
-    { name: 'Contact', href: '#contact' },
+    { name: t('navbar.solutions'), href: '#solutions' },
+    { name: t('navbar.technology'), href: '#technology' },
+    { name: t('navbar.useCases'), href: '#use-cases' },
+    { name: t('navbar.contact'), href: '#contact' },
   ];
 
   return (
@@ -50,6 +57,14 @@ const Navbar: React.FC = () => {
             
             <div className="d-flex align-items-center gap-3">
               <button
+                className="btn btn-outline-secondary btn-sm"
+                onClick={toggleLanguage}
+                aria-label="Toggle language"
+                title={`Switch to ${i18n.language === 'en' ? 'Spanish' : 'English'}`}
+              >
+                {i18n.language === 'en' ? 'ES' : 'EN'}
+              </button>
+              <button
                 className="btn btn-outline-primary btn-sm"
                 onClick={toggleTheme}
                 aria-label="Toggle theme"
@@ -60,7 +75,7 @@ const Navbar: React.FC = () => {
                 className="btn btn-primary btn-sm"
                 onClick={() => setIsDemoModalOpen(true)}
               >
-                Get Demo
+                {t('navbar.getDemo')}
               </button>
             </div>
           </div>

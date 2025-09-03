@@ -1,6 +1,8 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const Footer: React.FC = () => {
+  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
 
   const footerLinks = {
@@ -48,8 +50,7 @@ const Footer: React.FC = () => {
               </h4>
             </div>
             <p className="mb-3">
-              Empowering businesses with intelligent AI solutions that transform 
-              operations and unlock new possibilities through real-time knowledge processing.
+              {t('footer.description')}
             </p>
             <div className="social-links">
               {socialLinks.map((social, index) => (
@@ -71,7 +72,7 @@ const Footer: React.FC = () => {
           <div className="col-lg-8">
             <div className="row">
               <div className="col-md-3 col-sm-6 mb-4">
-                <h6 className="fw-bold mb-3">Solutions</h6>
+                <h6 className="fw-bold mb-3">{t('footer.solutions')}</h6>
                 <ul className="list-unstyled">
                   {footerLinks.solutions.map((link, index) => (
                     <li key={index} className="mb-2">
@@ -84,7 +85,7 @@ const Footer: React.FC = () => {
               </div>
 
               <div className="col-md-3 col-sm-6 mb-4">
-                <h6 className="fw-bold mb-3">Company</h6>
+                <h6 className="fw-bold mb-3">{t('footer.company')}</h6>
                 <ul className="list-unstyled">
                   {footerLinks.company.map((link, index) => (
                     <li key={index} className="mb-2">
@@ -97,7 +98,7 @@ const Footer: React.FC = () => {
               </div>
 
               <div className="col-md-3 col-sm-6 mb-4">
-                <h6 className="fw-bold mb-3">Resources</h6>
+                <h6 className="fw-bold mb-3">{t('footer.resources')}</h6>
                 <ul className="list-unstyled">
                   {footerLinks.resources.map((link, index) => (
                     <li key={index} className="mb-2">
@@ -110,7 +111,7 @@ const Footer: React.FC = () => {
               </div>
 
               <div className="col-md-3 col-sm-6 mb-4">
-                <h6 className="fw-bold mb-3">Legal</h6>
+                <h6 className="fw-bold mb-3">{t('footer.legal')}</h6>
                 <ul className="list-unstyled">
                   {footerLinks.legal.map((link, index) => (
                     <li key={index} className="mb-2">
@@ -128,7 +129,7 @@ const Footer: React.FC = () => {
         {/* Contact Section */}
         <div className="row mt-4 pt-4 border-top border-secondary">
           <div className="col-lg-6 mb-3">
-            <h6 className="fw-bold mb-3">Contact Us</h6>
+            <h6 className="fw-bold mb-3">{t('footer.contactUs')}</h6>
             <div className="contact-info">
               <div className="d-flex align-items-center mb-3">
                 <i className="fas fa-envelope text-primary me-3"></i>
@@ -146,19 +147,19 @@ const Footer: React.FC = () => {
           </div>
 
           <div className="col-lg-6 mb-3">
-            <h6 className="fw-bold mb-3">Newsletter</h6>
+            <h6 className="fw-bold mb-3">{t('footer.newsletter')}</h6>
             <p className="mb-3">
-              Stay updated with the latest AI trends and RAGtional news.
+              {t('footer.newsletterDescription')}
             </p>
             <div className="input-group">
               <input
                 type="email"
                 className="form-control"
-                placeholder="Enter your email"
+                placeholder={t('footer.newsletterPlaceholder')}
                 aria-label="Email for newsletter"
               />
               <button className="btn btn-primary" type="button">
-                Subscribe
+                {t('footer.subscribe')}
               </button>
             </div>
           </div>
@@ -168,12 +169,12 @@ const Footer: React.FC = () => {
         <div className="row mt-4 pt-3 border-top border-secondary">
           <div className="col-md-6 mb-2">
             <p className="mb-0">
-              © {currentYear} RAGtional. All rights reserved.
+              © {currentYear} RAGtional. {t('footer.allRightsReserved')}
             </p>
           </div>
           <div className="col-md-6 text-md-end mb-2">
             <p className=" mb-0">
-              Made with <i className="fas fa-heart text-danger"></i> for the AI community
+              {t('footer.madeWithLove')} <i className="fas fa-heart text-danger"></i> {t('footer.forAICommunity')}
             </p>
           </div>
         </div>

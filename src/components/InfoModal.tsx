@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 interface InfoModalProps {
   isOpen: boolean;
@@ -21,6 +22,7 @@ const InfoModal: React.FC<InfoModalProps> = ({
   ctaText,
   onCtaClick
 }) => {
+  const { t } = useTranslation();
   if (!isOpen) return null;
 
   const handleBackdropClick = (e: React.MouseEvent) => {
@@ -72,7 +74,7 @@ const InfoModal: React.FC<InfoModalProps> = ({
               
               {features && features.length > 0 && (
                 <div className="features-section mb-4">
-                  <h6 className="fw-bold mb-3">Key Features:</h6>
+                  <h6 className="fw-bold mb-3">{t('infoModal.keyFeatures')}</h6>
                   <div className="row">
                     {features.map((feature, index) => (
                       <div key={index} className="col-md-6 mb-2">
@@ -88,11 +90,9 @@ const InfoModal: React.FC<InfoModalProps> = ({
               
               {/* Additional Content */}
               <div className="additional-info p-4 rounded-3 bg-light">
-                <h6 className="fw-bold mb-3">Why Choose This Solution?</h6>
+                <h6 className="fw-bold mb-3">{t('infoModal.whyChoose')}</h6>
                 <p className="text-muted mb-0">
-                  Our {title.toLowerCase()} solution is designed to integrate seamlessly with your existing 
-                  infrastructure while providing enterprise-grade performance and reliability. 
-                  Get started today and transform your business operations.
+                  {t('infoModal.whyChooseDescription', { title: title.toLowerCase() })}
                 </p>
               </div>
             </div>
@@ -104,7 +104,7 @@ const InfoModal: React.FC<InfoModalProps> = ({
                 className="btn btn-secondary"
                 onClick={onClose}
               >
-                Close
+                {t('infoModal.close')}
               </button>
               {ctaText && onCtaClick && (
                 <button

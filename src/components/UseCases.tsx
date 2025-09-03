@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import InfoModal from './InfoModal';
 
 interface UseCaseProps {
@@ -18,6 +19,7 @@ const UseCase: React.FC<UseCaseProps> = ({
   industry, 
   detailedDescription 
 }) => {
+  const { t } = useTranslation();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleLearnMore = () => {
@@ -49,7 +51,7 @@ const UseCase: React.FC<UseCaseProps> = ({
             <h4 className="fw-bold mb-3">{title}</h4>
             <p className="text-muted mb-4">{description}</p>
             
-            <h6 className="fw-bold mb-3">Key Benefits:</h6>
+            <h6 className="fw-bold mb-3">{t('useCases.keyBenefits')}</h6>
             <ul className="list-unstyled">
               {benefits.map((benefit, index) => (
                 <li key={index} className="mb-2 d-flex align-items-start">
@@ -66,7 +68,7 @@ const UseCase: React.FC<UseCaseProps> = ({
               onClick={handleLearnMore}
             >
               <i className="fas fa-arrow-right me-2"></i>
-              Learn More
+              {t('useCases.learnMore')}
             </button>
           </div>
         </div>
@@ -79,7 +81,7 @@ const UseCase: React.FC<UseCaseProps> = ({
         description={detailedDescription}
         icon={icon}
         features={benefits}
-        ctaText="Get Started"
+        ctaText={t('useCases.getStarted')}
         onCtaClick={handleGetStarted}
       />
     </>
@@ -87,45 +89,31 @@ const UseCase: React.FC<UseCaseProps> = ({
 };
 
 const UseCases: React.FC = () => {
+  const { t } = useTranslation();
   const useCases = [
     {
       icon: 'fas fa-users-cog',
-      title: 'Internal Knowledge Assistant',
-      description: 'Transform your company\'s knowledge base into an intelligent, conversational interface that helps employees find information instantly.',
-      detailedDescription: 'Our Internal Knowledge Assistant transforms your company\'s scattered information into a centralized, intelligent system. Using advanced RAG technology, employees can ask questions in natural language and receive accurate, contextual answers instantly. This solution reduces time spent searching for information by up to 80% and ensures everyone has access to the latest company knowledge.',
-      benefits: [
-        'Instant access to company policies and procedures',
-        'Reduced time spent searching for information',
-        'Improved employee productivity and satisfaction',
-        'Centralized knowledge management'
-      ],
-      industry: 'Enterprise'
+      title: t('useCases.cases.knowledgeAssistant.title'),
+      description: t('useCases.cases.knowledgeAssistant.description'),
+      detailedDescription: t('useCases.cases.knowledgeAssistant.detailedDescription'),
+      benefits: t('useCases.cases.knowledgeAssistant.benefits', { returnObjects: true }) as string[],
+      industry: t('useCases.cases.knowledgeAssistant.industry')
     },
     {
       icon: 'fas fa-headset',
-      title: 'Customer Support Automation',
-      description: 'Deploy AI-powered chatbots that handle customer inquiries 24/7, providing instant responses and escalating complex issues to human agents.',
-      detailedDescription: 'Revolutionize your customer support with AI-powered chatbots that provide 24/7 assistance. Our solution handles routine inquiries automatically while intelligently routing complex issues to human agents. With natural language processing and integration with your knowledge base, customers receive accurate, helpful responses that improve satisfaction and reduce support costs.',
-      benefits: [
-        '24/7 customer support availability',
-        'Faster response times and resolution',
-        'Reduced support ticket volume',
-        'Improved customer satisfaction scores'
-      ],
-      industry: 'Customer Service'
+      title: t('useCases.cases.customerSupport.title'),
+      description: t('useCases.cases.customerSupport.description'),
+      detailedDescription: t('useCases.cases.customerSupport.detailedDescription'),
+      benefits: t('useCases.cases.customerSupport.benefits', { returnObjects: true }) as string[],
+      industry: t('useCases.cases.customerSupport.industry')
     },
     {
       icon: 'fas fa-chart-line',
-      title: 'Data Analysis & Insights',
-      description: 'Leverage AI agents to analyze large datasets, generate reports, and provide actionable business insights in real-time.',
-      detailedDescription: 'Transform your data into actionable insights with our AI-powered analysis platform. Our solution processes large datasets in real-time, identifying patterns and trends that would be impossible to spot manually. Generate comprehensive reports automatically and receive proactive alerts about important business developments.',
-      benefits: [
-        'Automated data processing and analysis',
-        'Real-time business intelligence',
-        'Predictive analytics and forecasting',
-        'Reduced manual reporting effort'
-      ],
-      industry: 'Analytics'
+      title: t('useCases.cases.dataAnalysis.title'),
+      description: t('useCases.cases.dataAnalysis.description'),
+      detailedDescription: t('useCases.cases.dataAnalysis.detailedDescription'),
+      benefits: t('useCases.cases.dataAnalysis.benefits', { returnObjects: true }) as string[],
+      industry: t('useCases.cases.dataAnalysis.industry')
     }
   ];
 
@@ -134,10 +122,9 @@ const UseCases: React.FC = () => {
       <div className="container">
         <div className="row text-center mb-5">
           <div className="col-lg-8 mx-auto">
-            <h2 className="display-5 fw-bold mb-3">Real-World Use Cases</h2>
+            <h2 className="display-5 fw-bold mb-3">{t('useCases.title')}</h2>
             <p className="lead text-muted">
-              See how organizations are leveraging our AI solutions to solve 
-              real business challenges and drive measurable results.
+              {t('useCases.description')}
             </p>
           </div>
         </div>
@@ -151,19 +138,18 @@ const UseCases: React.FC = () => {
         <div className="row mt-5">
           <div className="col-12 text-center">
             <div className="cta-section p-5 rounded-3">
-              <h3 className="fw-bold mb-3">Ready to Transform Your Business?</h3>
+              <h3 className="fw-bold mb-3">{t('useCases.cta.title')}</h3>
               <p className="text-muted mb-4">
-                Join hundreds of companies already using RAGtional to automate 
-                their operations and unlock the power of AI.
+                {t('useCases.cta.description')}
               </p>
               <div className="d-flex justify-content-center flex-wrap gap-3">
                 <button className="btn btn-primary btn-lg px-4 py-3">
                   <i className="fas fa-rocket me-2"></i>
-                  Start Your Journey
+                  {t('useCases.cta.startJourney')}
                 </button>
                 <button className="btn btn-outline-primary btn-lg px-4 py-3">
                   <i className="fas fa-calendar me-2"></i>
-                  Schedule a Demo
+                  {t('useCases.cta.scheduleDemo')}
                 </button>
               </div>
             </div>

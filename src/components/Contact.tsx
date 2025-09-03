@@ -1,9 +1,11 @@
 import React, { useState, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import emailjs from '@emailjs/browser';
 import DemoModal from './DemoModal';
 import { EMAILJS_CONFIG, EMAILJS_TEMPLATES } from '../config/emailjs';
 
 const Contact: React.FC = () => {
+  const { t } = useTranslation();
   const formRef = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState({
     name: '',
@@ -30,14 +32,14 @@ const Contact: React.FC = () => {
     
     // Basic validation
     if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
-      setErrorMessage('Please fill in all required fields.');
+      setErrorMessage(t('contact.validation.requiredFields'));
       return;
     }
 
     // Email format validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
-      setErrorMessage('Please enter a valid email address.');
+      setErrorMessage(t('contact.validation.invalidEmail'));
       return;
     }
 
@@ -68,7 +70,7 @@ const Contact: React.FC = () => {
     } catch (error) {
       console.error('EmailJS Error:', error);
       setSubmitStatus('error');
-      setErrorMessage('Failed to send message. Please try again or contact us directly.');
+      setErrorMessage(t('contact.failedToSend'));
     } finally {
       setIsSubmitting(false);
     }
@@ -77,13 +79,13 @@ const Contact: React.FC = () => {
   const contactInfo = [
     {
       icon: 'fas fa-phone',
-      title: 'Call Us',
+      title: t('contact.callUs'),
       content: '+57 3144798482',
       link: 'tel:+573144798482'
     },
     {
       icon: 'fas fa-envelope',
-      title: 'Email Us',
+      title: t('contact.emailUs'),
       content: 'julian09426@gmail.com',
       link: 'mailto:julian09426@gmail.com'
     }
@@ -94,10 +96,9 @@ const Contact: React.FC = () => {
       <div className="container">
         <div className="row text-center mb-5">
           <div className="col-lg-8 mx-auto">
-            <h2 className="display-5 fw-bold mb-3">Get in Touch</h2>
+            <h2 className="display-5 fw-bold mb-3">{t('contact.title')}</h2>
             <p className="lead text-muted">
-              Ready to transform your business with AI? Let's discuss how RAGtional 
-              can help you achieve your goals.
+              {t('contact.subtitle')}
             </p>
           </div>
         </div>
@@ -106,10 +107,9 @@ const Contact: React.FC = () => {
           {/* Contact Information */}
           <div className="col-lg-4 mb-4">
             <div className="contact-info-section">
-              <h4 className="fw-bold mb-4">Let's Start a Conversation</h4>
+              <h4 className="fw-bold mb-4">{t('contact.letsStartConversation')}</h4>
               <p className="text-muted mb-4">
-                Whether you're looking to implement RAG solutions, deploy AI agents, 
-                or build custom chatbots, our team is here to help you succeed.
+                {t('contact.conversationDescription')}
               </p>
               
               <div className="contact-items">
@@ -134,7 +134,7 @@ const Contact: React.FC = () => {
               </div>
 
               <div className="social-links mt-4">
-                <h6 className="fw-bold mb-3">Follow Us</h6>
+                <h6 className="fw-bold mb-3">{t('contact.followUs')}</h6>
                 <div className="d-flex gap-3">
                   <a href="https://www.linkedin.com/company/ragtional/about/" className="social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
                     <i className="fab fa-linkedin fa-lg"></i>
@@ -155,12 +155,12 @@ const Contact: React.FC = () => {
             <div className="contact-form-section">
               <div className="card border-0 shadow-sm">
                 <div className="card-body p-4">
-                  <h4 className="fw-bold mb-4">Send us a Message</h4>
+                  <h4 className="fw-bold mb-4">{t('contact.sendMessage')}</h4>
                   
                   {submitStatus === 'success' && (
                     <div className="alert alert-success alert-dismissible fade show" role="alert">
                       <i className="fas fa-check-circle me-2"></i>
-                      Thank you for your message! We'll get back to you within 24 hours.
+                      {t('contact.thankYouMessage')}
                       <button 
                         type="button" 
                         className="btn-close" 
@@ -194,7 +194,7 @@ const Contact: React.FC = () => {
                     <div className="row">
                       <div className="col-md-6 mb-3">
                         <label htmlFor="name" className="form-label fw-bold">
-                          Full Name <span className="text-danger">*</span>
+                          {t('contact.fullName')} <span className="text-danger">*</span>
                         </label>
                         <input
                           type="text"
@@ -204,13 +204,13 @@ const Contact: React.FC = () => {
                           value={formData.name}
                           onChange={handleInputChange}
                           required
-                          placeholder="Enter your full name"
+                          placeholder={t('placeholders.fullName')}
                         />
                       </div>
                       
                       <div className="col-md-6 mb-3">
                         <label htmlFor="email" className="form-label fw-bold">
-                          Email Address <span className="text-danger">*</span>
+                          {t('contact.emailAddress')} <span className="text-danger">*</span>
                         </label>
                         <input
                           type="email"
@@ -220,14 +220,14 @@ const Contact: React.FC = () => {
                           value={formData.email}
                           onChange={handleInputChange}
                           required
-                          placeholder="Enter your email address"
+                          placeholder={t('placeholders.emailAddress')}
                         />
                       </div>
                     </div>
 
                     <div className="mb-3">
                       <label htmlFor="company" className="form-label fw-bold">
-                        Company
+                        {t('contact.company')}
                       </label>
                       <input
                         type="text"
@@ -236,13 +236,13 @@ const Contact: React.FC = () => {
                         name="company"
                         value={formData.company}
                         onChange={handleInputChange}
-                        placeholder="Enter your company name"
+                        placeholder={t('placeholders.companyName')}
                       />
                     </div>
 
                     <div className="mb-4">
                       <label htmlFor="message" className="form-label fw-bold">
-                        Message <span className="text-danger">*</span>
+                        {t('contact.message')} <span className="text-danger">*</span>
                       </label>
                       <textarea
                         className="form-control"
@@ -252,7 +252,7 @@ const Contact: React.FC = () => {
                         value={formData.message}
                         onChange={handleInputChange}
                         required
-                        placeholder="Tell us about your project or how we can help..."
+                        placeholder={t('placeholders.message')}
                       ></textarea>
                     </div>
 
@@ -265,12 +265,12 @@ const Contact: React.FC = () => {
                         {isSubmitting ? (
                           <>
                             <span className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
-                            Sending Message...
+                            {t('contact.sendingMessage')}
                           </>
                         ) : (
                           <>
                             <i className="fas fa-paper-plane me-2"></i>
-                            Send Message
+                            {t('contact.sendMessageButton')}
                           </>
                         )}
                       </button>
@@ -286,10 +286,9 @@ const Contact: React.FC = () => {
         <div className="row mt-5">
           <div className="col-12 text-center">
             <div className="cta-section p-5 rounded-3">
-              <h3 className="fw-bold mb-3">Ready to Get Started?</h3>
+              <h3 className="fw-bold mb-3">{t('contact.readyToGetStarted')}</h3>
               <p className="text-muted mb-4">
-                Schedule a free consultation with our AI experts and discover 
-                how RAGtional can transform your business operations.
+                {t('contact.scheduleConsultation')}
               </p>
               <div className="d-flex justify-content-center flex-wrap gap-3">
                 <button 
@@ -297,11 +296,11 @@ const Contact: React.FC = () => {
                   onClick={() => setIsDemoModalOpen(true)}
                 >
                   <i className="fas fa-calendar me-2"></i>
-                  Schedule Demo
+                  {t('contact.scheduleDemo')}
                 </button>
                 <button className="btn btn-outline-primary btn-lg px-4 py-3">
                   <i className="fas fa-download me-2"></i>
-                  Download Brochure
+                  {t('contact.downloadBrochure')}
                 </button>
               </div>
             </div>

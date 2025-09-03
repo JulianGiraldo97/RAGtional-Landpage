@@ -1,0 +1,277 @@
+{
+  "hero": {
+    "title": "RAGtional:",
+    "subtitle": "Smarter AI with Real-Time Knowledge",
+    "description": "Transform your business with cutting-edge AI solutions powered by Retrieval-Augmented Generation (RAG), Large Language Models (LLMs), intelligent agents, and custom chatbots. Access real-time knowledge and automate complex workflows with unprecedented accuracy.",
+    "getDemo": "Get a Demo",
+    "learnMore": "Learn More"
+  },
+  "navbar": {
+    "solutions": "Solutions",
+    "technology": "Technology",
+    "useCases": "Use Cases",
+    "contact": "Contact",
+    "getDemo": "Get Demo"
+  },
+  "solutions": {
+    "title": "Our Solutions",
+    "description": "Comprehensive AI solutions designed to transform your business operations and unlock new possibilities with intelligent automation.",
+    "n8nWorkflows": {
+      "title": "n8n Workflows",
+      "description": "Automate complex business processes with visual workflow automation.",
+      "detailedDescription": "Transform your business operations with our advanced n8n workflow automation platform. Our solution provides a visual, drag-and-drop interface that makes complex automation accessible to everyone in your organization. With over 500+ integrations and custom webhook capabilities, you can connect any system and automate any process.",
+      "features": [
+        "Drag & drop interface",
+        "500+ integrations",
+        "Custom webhooks",
+        "Real-time monitoring"
+      ]
+    },
+    "ragPipelines": {
+      "title": "RAG Pipelines",
+      "description": "Build intelligent knowledge retrieval systems with vector databases.",
+      "detailedDescription": "Unlock the power of your data with our Retrieval-Augmented Generation (RAG) pipelines. Our solution enables you to build intelligent knowledge retrieval systems that provide accurate, context-aware responses by combining your proprietary data with advanced language models.",
+      "features": [
+        "Vector embeddings",
+        "Semantic search",
+        "Document processing",
+        "Real-time updates"
+      ]
+    },
+    "aiAgents": {
+      "title": "AI Agents",
+      "description": "Deploy autonomous AI agents for complex task execution.",
+      "detailedDescription": "Deploy intelligent AI agents that can autonomously execute complex tasks and workflows. Our AI agents combine advanced reasoning capabilities with tool integration, enabling them to handle multi-step processes while maintaining human oversight and control.",
+      "features": [
+        "Multi-step reasoning",
+        "Tool integration",
+        "Memory management",
+        "Human oversight"
+      ]
+    },
+    "customChatbots": {
+      "title": "Custom Chatbots",
+      "description": "Create intelligent conversational interfaces for your business.",
+      "detailedDescription": "Build intelligent conversational interfaces that understand your business context and provide personalized assistance to your customers and employees. Our custom chatbots leverage advanced natural language processing to deliver human-like interactions across multiple platforms.",
+      "features": [
+        "Natural language processing",
+        "Multi-platform support",
+        "Analytics dashboard",
+        "Easy customization"
+      ]
+    },
+    "learnMore": "Learn More"
+  },
+  "useCases": {
+    "title": "Real-World Use Cases",
+    "description": "See how organizations are leveraging our AI solutions to solve real business challenges and drive measurable results.",
+    "internalKnowledgeAssistant": {
+      "title": "Internal Knowledge Assistant",
+      "description": "Transform your company's knowledge base into an intelligent, conversational interface that helps employees find information instantly.",
+      "detailedDescription": "Our Internal Knowledge Assistant transforms your company's scattered information into a centralized, intelligent system. Using advanced RAG technology, employees can ask questions in natural language and receive accurate, contextual answers instantly. This solution reduces time spent searching for information by up to 80% and ensures everyone has access to the latest company knowledge.",
+      "benefits": [
+        "Instant access to company policies and procedures",
+        "Reduced time spent searching for information",
+        "Improved employee productivity and satisfaction",
+        "Centralized knowledge management"
+      ],
+      "industry": "Enterprise"
+    },
+    "customerSupportAutomation": {
+      "title": "Customer Support Automation",
+      "description": "Deploy AI-powered chatbots that handle customer inquiries 24/7, providing instant responses and escalating complex issues to human agents.",
+      "detailedDescription": "Revolutionize your customer support with AI-powered chatbots that provide 24/7 assistance. Our solution handles routine inquiries automatically while intelligently routing complex issues to human agents. With natural language processing and integration with your knowledge base, customers receive accurate, helpful responses that improve satisfaction and reduce support costs.",
+      "benefits": [
+        "24/7 customer support availability",
+        "Faster response times and resolution",
+        "Reduced support ticket volume",
+        "Improved customer satisfaction scores"
+      ],
+      "industry": "Customer Service"
+    },
+    "dataAnalysisInsights": {
+      "title": "Data Analysis & Insights",
+      "description": "Leverage AI agents to analyze large datasets, generate reports, and provide actionable business insights in real-time.",
+      "detailedDescription": "Transform your data into actionable insights with our AI-powered analysis platform. Our solution processes large datasets in real-time, identifying patterns and trends that would be impossible to spot manually. Generate comprehensive reports automatically and receive proactive alerts about important business developments.",
+      "benefits": [
+        "Automated data processing and analysis",
+        "Real-time business intelligence",
+        "Predictive analytics and forecasting",
+        "Reduced manual reporting effort"
+      ],
+      "industry": "Analytics"
+    },
+    "learnMore": "Learn More",
+    "cta": {
+      "title": "Ready to Transform Your Business?",
+      "description": "Join hundreds of companies already using RAGtional to automate their operations and unlock the power of AI.",
+      "startJourney": "Start Your Journey",
+      "scheduleDemo": "Schedule a Demo"
+    }
+  },
+  "demoModal": {
+    "title": "Request a Demo",
+    "subtitle": "See RAGtional in action and discover how our AI solutions can transform your business.",
+    "form": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "company": "Company Name",
+      "message": "Tell us about your needs",
+      "messagePlaceholder": "Describe what you're looking to achieve with AI solutions...",
+      "submit": "Request Demo",
+      "submitting": "Submitting Request...",
+      "close": "Close"
+    },
+    "validation": {
+      "requiredFields": "Please fill in all required fields.",
+      "invalidEmail": "Please enter a valid email address."
+    }
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "Ready to transform your business with AI? Let's discuss how RAGtional can help you achieve your goals.",
+    "form": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "company": "Company Name",
+      "message": "Message",
+      "messagePlaceholder": "Tell us about your project and how we can help...",
+      "submit": "Send Message",
+      "submitting": "Sending...",
+      "close": "Close"
+    },
+    "validation": {
+      "requiredFields": "Please fill in all required fields.",
+      "invalidEmail": "Please enter a valid email address."
+    }
+  },
+  "infoModal": {
+    "keyFeatures": "Key Features:",
+    "whyChoose": "Why Choose This Solution?",
+    "whyChooseDescription": "Our {{title}} solution is designed to integrate seamlessly with your existing infrastructure while providing enterprise-grade performance and reliability. Get started today and transform your business operations.",
+    "close": "Close",
+    "getStarted": "Get Started"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success"
+  },
+  "placeholders": {
+    "fullName": "Enter your full name",
+    "emailAddress": "Enter your email address",
+    "companyName": "Enter your company name",
+    "message": "Tell us about your project or how we can help...",
+    "demoMessage": "Describe what you're looking to achieve with AI solutions..."
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "Ready to transform your business with AI? Let's discuss how RAGtional can help you achieve your goals.",
+    "letsStartConversation": "Let's Start a Conversation",
+    "conversationDescription": "Whether you're looking to implement RAG solutions, deploy AI agents, or build custom chatbots, our team is here to help you succeed.",
+    "callUs": "Call Us",
+    "emailUs": "Email Us",
+    "followUs": "Follow Us",
+    "sendMessage": "Send us a Message",
+    "fullName": "Full Name",
+    "emailAddress": "Email Address",
+    "company": "Company",
+    "message": "Message",
+    "sendMessageButton": "Send Message",
+    "sendingMessage": "Sending Message...",
+    "thankYouMessage": "Thank you for your message! We'll get back to you within 24 hours.",
+    "failedToSend": "Failed to send message. Please try again or contact us directly.",
+    "validation": {
+      "requiredFields": "Please fill in all required fields.",
+      "invalidEmail": "Please enter a valid email address."
+    },
+    "readyToGetStarted": "Ready to Get Started?",
+    "scheduleConsultation": "Schedule a free consultation with our AI experts and discover how RAGtional can transform your business operations.",
+    "scheduleDemo": "Schedule Demo",
+    "downloadBrochure": "Download Brochure"
+  },
+  "useCases": {
+    "title": "Real-World Use Cases",
+    "description": "See how organizations are leveraging our AI solutions to solve real business challenges and drive measurable results.",
+    "keyBenefits": "Key Benefits:",
+    "learnMore": "Learn More",
+    "getStarted": "Get Started",
+    "cta": {
+      "title": "Ready to Transform Your Business?",
+      "description": "Join hundreds of companies already using RAGtional to automate their operations and unlock the power of AI.",
+      "startJourney": "Start Your Journey",
+      "scheduleDemo": "Schedule a Demo"
+    },
+    "cases": {
+      "knowledgeAssistant": {
+        "title": "Internal Knowledge Assistant",
+        "description": "Transform your company's knowledge base into an intelligent, conversational interface that helps employees find information instantly.",
+        "detailedDescription": "Our Internal Knowledge Assistant transforms your company's scattered information into a centralized, intelligent system. Using advanced RAG technology, employees can ask questions in natural language and receive accurate, contextual answers instantly. This solution reduces time spent searching for information by up to 80% and ensures everyone has access to the latest company knowledge.",
+        "benefits": [
+          "Instant access to company policies and procedures",
+          "Reduced time spent searching for information",
+          "Improved employee productivity and satisfaction",
+          "Centralized knowledge management"
+        ],
+        "industry": "Enterprise"
+      },
+      "customerSupport": {
+        "title": "Customer Support Automation",
+        "description": "Deploy AI-powered chatbots that handle customer inquiries 24/7, providing instant responses and escalating complex issues to human agents.",
+        "detailedDescription": "Revolutionize your customer support with AI-powered chatbots that provide 24/7 assistance. Our solution handles routine inquiries automatically while intelligently routing complex issues to human agents. With natural language processing and integration with your knowledge base, customers receive accurate, helpful responses that improve satisfaction and reduce support costs.",
+        "benefits": [
+          "24/7 customer support availability",
+          "Faster response times and resolution",
+          "Reduced support ticket volume",
+          "Improved customer satisfaction scores"
+        ],
+        "industry": "Customer Service"
+      },
+      "dataAnalysis": {
+        "title": "Data Analysis & Insights",
+        "description": "Leverage AI agents to analyze large datasets, generate reports, and provide actionable business insights in real-time.",
+        "detailedDescription": "Transform your data into actionable insights with our AI-powered analysis platform. Our solution processes large datasets in real-time, identifying patterns and trends that would be impossible to spot manually. Generate comprehensive reports automatically and receive proactive alerts about important business developments.",
+        "benefits": [
+          "Automated data processing and analysis",
+          "Real-time business intelligence",
+          "Predictive analytics and forecasting",
+          "Reduced manual reporting effort"
+        ],
+        "industry": "Analytics"
+      }
+    }
+  },
+  "solutions": {
+    "title": "Our Solutions",
+    "description": "Comprehensive AI solutions designed to transform your business operations and unlock new possibilities with intelligent automation.",
+    "learnMore": "Learn More",
+    "getStarted": "Get Started"
+  },
+  "infoModal": {
+    "close": "Close"
+  },
+  "footer": {
+    "description": "Empowering businesses with intelligent AI solutions that transform operations and unlock new possibilities through real-time knowledge processing.",
+    "solutions": "Solutions",
+    "company": "Company",
+    "resources": "Resources",
+    "legal": "Legal",
+    "contactUs": "Contact Us",
+    "newsletter": "Newsletter",
+    "newsletterDescription": "Stay updated with the latest AI trends and RAGtional news.",
+    "newsletterPlaceholder": "Enter your email",
+    "subscribe": "Subscribe",
+    "allRightsReserved": "All rights reserved.",
+    "madeWithLove": "Made with",
+    "forAICommunity": "for the AI community"
+  },
+  "technology": {
+    "title": "Our Technology Stack",
+    "description": "Built on cutting-edge AI technologies and frameworks, our platform delivers enterprise-grade performance and reliability.",
+    "realTimeIntegration": "Real-Time Integration",
+    "realTimeDescription": "Our platform seamlessly integrates with your existing infrastructure, providing real-time data processing and AI-powered insights.",
+    "realTimeProcessing": "Real-time Processing",
+    "enterpriseSecurity": "Enterprise Security",
+    "scalableArchitecture": "Scalable Architecture"
+  }
+}

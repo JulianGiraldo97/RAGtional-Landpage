@@ -1,0 +1,277 @@
+{
+  "hero": {
+    "title": "RAGtional:",
+    "subtitle": "IA Más Inteligente con Conocimiento en Tiempo Real",
+    "description": "Transforma tu negocio con soluciones de IA de vanguardia impulsadas por Generación Aumentada de Recuperación (RAG), Modelos de Lenguaje Grande (LLMs), agentes inteligentes y chatbots personalizados. Accede a conocimiento en tiempo real y automatiza flujos de trabajo complejos con una precisión sin precedentes.",
+    "getDemo": "Obtener Demo",
+    "learnMore": "Saber Más"
+  },
+  "navbar": {
+    "solutions": "Soluciones",
+    "technology": "Tecnología",
+    "useCases": "Casos de Uso",
+    "contact": "Contacto",
+    "getDemo": "Obtener Demo"
+  },
+  "solutions": {
+    "title": "Nuestras Soluciones",
+    "description": "Soluciones de IA integrales diseñadas para transformar las operaciones de tu negocio y desbloquear nuevas posibilidades con automatización inteligente.",
+    "n8nWorkflows": {
+      "title": "Flujos de Trabajo n8n",
+      "description": "Automatiza procesos de negocio complejos con automatización de flujos de trabajo visual.",
+      "detailedDescription": "Transforma las operaciones de tu negocio con nuestra plataforma avanzada de automatización de flujos de trabajo n8n. Nuestra solución proporciona una interfaz visual de arrastrar y soltar que hace que la automatización compleja sea accesible para todos en tu organización. Con más de 500+ integraciones y capacidades de webhook personalizadas, puedes conectar cualquier sistema y automatizar cualquier proceso.",
+      "features": [
+        "Interfaz de arrastrar y soltar",
+        "500+ integraciones",
+        "Webhooks personalizados",
+        "Monitoreo en tiempo real"
+      ]
+    },
+    "ragPipelines": {
+      "title": "Pipelines RAG",
+      "description": "Construye sistemas inteligentes de recuperación de conocimiento con bases de datos vectoriales.",
+      "detailedDescription": "Desbloquea el poder de tus datos con nuestros pipelines de Generación Aumentada de Recuperación (RAG). Nuestra solución te permite construir sistemas inteligentes de recuperación de conocimiento que proporcionan respuestas precisas y contextuales combinando tus datos propietarios con modelos de lenguaje avanzados.",
+      "features": [
+        "Embeddings vectoriales",
+        "Búsqueda semántica",
+        "Procesamiento de documentos",
+        "Actualizaciones en tiempo real"
+      ]
+    },
+    "aiAgents": {
+      "title": "Agentes de IA",
+      "description": "Despliega agentes de IA autónomos para la ejecución de tareas complejas.",
+      "detailedDescription": "Despliega agentes de IA inteligentes que pueden ejecutar autónomamente tareas y flujos de trabajo complejos. Nuestros agentes de IA combinan capacidades de razonamiento avanzado con integración de herramientas, permitiéndoles manejar procesos de múltiples pasos mientras mantienen supervisión y control humano.",
+      "features": [
+        "Razonamiento de múltiples pasos",
+        "Integración de herramientas",
+        "Gestión de memoria",
+        "Supervisión humana"
+      ]
+    },
+    "customChatbots": {
+      "title": "Chatbots Personalizados",
+      "description": "Crea interfaces conversacionales inteligentes para tu negocio.",
+      "detailedDescription": "Construye interfaces conversacionales inteligentes que entienden el contexto de tu negocio y proporcionan asistencia personalizada a tus clientes y empleados. Nuestros chatbots personalizados aprovechan el procesamiento avanzado de lenguaje natural para entregar interacciones similares a las humanas en múltiples plataformas.",
+      "features": [
+        "Procesamiento de lenguaje natural",
+        "Soporte multi-plataforma",
+        "Panel de análisis",
+        "Fácil personalización"
+      ]
+    },
+    "learnMore": "Saber Más"
+  },
+  "useCases": {
+    "title": "Casos de Uso del Mundo Real",
+    "description": "Ve cómo las organizaciones están aprovechando nuestras soluciones de IA para resolver desafíos empresariales reales y generar resultados medibles.",
+    "internalKnowledgeAssistant": {
+      "title": "Asistente de Conocimiento Interno",
+      "description": "Transforma la base de conocimiento de tu empresa en una interfaz conversacional inteligente que ayuda a los empleados a encontrar información instantáneamente.",
+      "detailedDescription": "Nuestro Asistente de Conocimiento Interno transforma la información dispersa de tu empresa en un sistema centralizado e inteligente. Usando tecnología RAG avanzada, los empleados pueden hacer preguntas en lenguaje natural y recibir respuestas precisas y contextuales instantáneamente. Esta solución reduce el tiempo dedicado a buscar información hasta en un 80% y asegura que todos tengan acceso al conocimiento más reciente de la empresa.",
+      "benefits": [
+        "Acceso instantáneo a políticas y procedimientos de la empresa",
+        "Tiempo reducido buscando información",
+        "Productividad y satisfacción mejoradas de los empleados",
+        "Gestión centralizada del conocimiento"
+      ],
+      "industry": "Empresarial"
+    },
+    "customerSupportAutomation": {
+      "title": "Automatización de Soporte al Cliente",
+      "description": "Despliega chatbots impulsados por IA que manejan consultas de clientes 24/7, proporcionando respuestas instantáneas y escalando problemas complejos a agentes humanos.",
+      "detailedDescription": "Revoluciona tu soporte al cliente con chatbots impulsados por IA que proporcionan asistencia 24/7. Nuestra solución maneja consultas rutinarias automáticamente mientras enruta inteligentemente problemas complejos a agentes humanos. Con procesamiento de lenguaje natural e integración con tu base de conocimiento, los clientes reciben respuestas precisas y útiles que mejoran la satisfacción y reducen los costos de soporte.",
+      "benefits": [
+        "Disponibilidad de soporte al cliente 24/7",
+        "Tiempos de respuesta y resolución más rápidos",
+        "Volumen reducido de tickets de soporte",
+        "Puntuaciones mejoradas de satisfacción del cliente"
+      ],
+      "industry": "Servicio al Cliente"
+    },
+    "dataAnalysisInsights": {
+      "title": "Análisis de Datos e Insights",
+      "description": "Aprovecha agentes de IA para analizar grandes conjuntos de datos, generar reportes y proporcionar insights empresariales accionables en tiempo real.",
+      "detailedDescription": "Transforma tus datos en insights accionables con nuestra plataforma de análisis impulsada por IA. Nuestra solución procesa grandes conjuntos de datos en tiempo real, identificando patrones y tendencias que serían imposibles de detectar manualmente. Genera reportes comprensivos automáticamente y recibe alertas proactivas sobre desarrollos empresariales importantes.",
+      "benefits": [
+        "Procesamiento y análisis automatizado de datos",
+        "Inteligencia empresarial en tiempo real",
+        "Analítica predictiva y pronósticos",
+        "Esfuerzo reducido de reportes manuales"
+      ],
+      "industry": "Analítica"
+    },
+    "learnMore": "Saber Más",
+    "cta": {
+      "title": "¿Listo para Transformar tu Negocio?",
+      "description": "Únete a cientos de empresas que ya están usando RAGtional para automatizar sus operaciones y desbloquear el poder de la IA.",
+      "startJourney": "Iniciar tu Viaje",
+      "scheduleDemo": "Programar una Demo"
+    }
+  },
+  "demoModal": {
+    "title": "Solicitar una Demo",
+    "subtitle": "Ve RAGtional en acción y descubre cómo nuestras soluciones de IA pueden transformar tu negocio.",
+    "form": {
+      "name": "Nombre Completo",
+      "email": "Dirección de Email",
+      "company": "Nombre de la Empresa",
+      "message": "Cuéntanos sobre tus necesidades",
+      "messagePlaceholder": "Describe lo que buscas lograr con soluciones de IA...",
+      "submit": "Solicitar Demo",
+      "submitting": "Enviando Solicitud...",
+      "close": "Cerrar"
+    },
+    "validation": {
+      "requiredFields": "Por favor completa todos los campos requeridos.",
+      "invalidEmail": "Por favor ingresa una dirección de email válida."
+    }
+  },
+  "contact": {
+    "title": "Ponte en Contacto",
+    "subtitle": "¿Listo para transformar tu negocio con IA? Hablemos sobre cómo RAGtional puede ayudarte a alcanzar tus objetivos.",
+    "form": {
+      "name": "Nombre Completo",
+      "email": "Dirección de Email",
+      "company": "Nombre de la Empresa",
+      "message": "Mensaje",
+      "messagePlaceholder": "Cuéntanos sobre tu proyecto y cómo podemos ayudar...",
+      "submit": "Enviar Mensaje",
+      "submitting": "Enviando...",
+      "close": "Cerrar"
+    },
+    "validation": {
+      "requiredFields": "Por favor completa todos los campos requeridos.",
+      "invalidEmail": "Por favor ingresa una dirección de email válida."
+    }
+  },
+  "infoModal": {
+    "keyFeatures": "Características Clave:",
+    "whyChoose": "¿Por Qué Elegir Esta Solución?",
+    "whyChooseDescription": "Nuestra solución {{title}} está diseñada para integrarse perfectamente con tu infraestructura existente mientras proporciona rendimiento y confiabilidad de nivel empresarial. Comienza hoy y transforma las operaciones de tu negocio.",
+    "close": "Cerrar",
+    "getStarted": "Comenzar"
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Error",
+    "success": "Éxito"
+  },
+  "placeholders": {
+    "fullName": "Ingresa tu nombre completo",
+    "emailAddress": "Ingresa tu dirección de email",
+    "companyName": "Ingresa el nombre de tu empresa",
+    "message": "Cuéntanos sobre tu proyecto o cómo podemos ayudar...",
+    "demoMessage": "Describe lo que buscas lograr con soluciones de IA..."
+  },
+  "contact": {
+    "title": "Ponte en Contacto",
+    "subtitle": "¿Listo para transformar tu negocio con IA? Hablemos sobre cómo RAGtional puede ayudarte a alcanzar tus objetivos.",
+    "letsStartConversation": "Iniciemos una Conversación",
+    "conversationDescription": "Ya sea que busques implementar soluciones RAG, desplegar agentes de IA, o construir chatbots personalizados, nuestro equipo está aquí para ayudarte a tener éxito.",
+    "callUs": "Llámanos",
+    "emailUs": "Envíanos un Email",
+    "followUs": "Síguenos",
+    "sendMessage": "Envíanos un Mensaje",
+    "fullName": "Nombre Completo",
+    "emailAddress": "Dirección de Email",
+    "company": "Empresa",
+    "message": "Mensaje",
+    "sendMessageButton": "Enviar Mensaje",
+    "sendingMessage": "Enviando...",
+    "thankYouMessage": "¡Gracias por tu mensaje! Te responderemos dentro de 24 horas.",
+    "failedToSend": "Error al enviar el mensaje. Por favor intenta de nuevo o contáctanos directamente.",
+    "validation": {
+      "requiredFields": "Por favor, rellena todos los campos obligatorios.",
+      "invalidEmail": "Por favor, introduce una dirección de correo electrónico válida."
+    },
+    "readyToGetStarted": "¿Listo para Comenzar?",
+    "scheduleConsultation": "Programa una consulta gratuita con nuestros expertos en IA y descubre cómo RAGtional puede transformar las operaciones de tu negocio.",
+    "scheduleDemo": "Programar Demo",
+    "downloadBrochure": "Descargar Folleto"
+  },
+  "useCases": {
+    "title": "Casos de Uso del Mundo Real",
+    "description": "Ve cómo las organizaciones están aprovechando nuestras soluciones de IA para resolver desafíos empresariales reales y generar resultados medibles.",
+    "keyBenefits": "Beneficios Clave:",
+    "learnMore": "Saber Más",
+    "getStarted": "Comenzar",
+    "cta": {
+      "title": "¿Listo para Transformar tu Negocio?",
+      "description": "Únete a cientos de empresas que ya están usando RAGtional para automatizar sus operaciones y desbloquear el poder de la IA.",
+      "startJourney": "Inicia tu Viaje",
+      "scheduleDemo": "Programar una Demostración"
+    },
+    "cases": {
+      "knowledgeAssistant": {
+        "title": "Asistente de Conocimiento Interno",
+        "description": "Transforma la base de conocimiento de tu empresa en una interfaz conversacional inteligente que ayuda a los empleados a encontrar información instantáneamente.",
+        "detailedDescription": "Nuestro Asistente de Conocimiento Interno transforma la información dispersa de tu empresa en un sistema centralizado e inteligente. Utilizando tecnología RAG avanzada, los empleados pueden hacer preguntas en lenguaje natural y recibir respuestas precisas y contextuales al instante. Esta solución reduce el tiempo dedicado a buscar información hasta en un 80% y garantiza que todos tengan acceso al conocimiento más reciente de la empresa.",
+        "benefits": [
+          "Acceso instantáneo a políticas y procedimientos de la empresa",
+          "Tiempo reducido en búsqueda de información",
+          "Mejor productividad y satisfacción de los empleados",
+          "Gestión centralizada del conocimiento"
+        ],
+        "industry": "Empresarial"
+      },
+      "customerSupport": {
+        "title": "Automatización de Atención al Cliente",
+        "description": "Despliega chatbots impulsados por IA que manejan consultas de clientes 24/7, proporcionando respuestas instantáneas y escalando problemas complejos a agentes humanos.",
+        "detailedDescription": "Revoluciona tu atención al cliente con chatbots impulsados por IA que brindan asistencia 24/7. Nuestra solución maneja consultas rutinarias automáticamente mientras enruta inteligentemente problemas complejos a agentes humanos. Con procesamiento de lenguaje natural e integración con tu base de conocimiento, los clientes reciben respuestas precisas y útiles que mejoran la satisfacción y reducen los costos de soporte.",
+        "benefits": [
+          "Disponibilidad de atención al cliente 24/7",
+          "Tiempos de respuesta y resolución más rápidos",
+          "Volumen reducido de tickets de soporte",
+          "Puntuaciones mejoradas de satisfacción del cliente"
+        ],
+        "industry": "Atención al Cliente"
+      },
+      "dataAnalysis": {
+        "title": "Análisis de Datos e Insights",
+        "description": "Aprovecha agentes de IA para analizar grandes conjuntos de datos, generar reportes y proporcionar insights empresariales accionables en tiempo real.",
+        "detailedDescription": "Transforma tus datos en insights accionables con nuestra plataforma de análisis impulsada por IA. Nuestra solución procesa grandes conjuntos de datos en tiempo real, identificando patrones y tendencias que serían imposibles de detectar manualmente. Genera reportes comprensivos automáticamente y recibe alertas proactivas sobre desarrollos empresariales importantes.",
+        "benefits": [
+          "Procesamiento y análisis automatizado de datos",
+          "Inteligencia empresarial en tiempo real",
+          "Análisis predictivo y pronósticos",
+          "Esfuerzo reducido en reportes manuales"
+        ],
+        "industry": "Analítica"
+      }
+    }
+  },
+  "solutions": {
+    "title": "Nuestras Soluciones",
+    "description": "Soluciones de IA integrales diseñadas para transformar las operaciones de tu negocio y desbloquear nuevas posibilidades con automatización inteligente.",
+    "learnMore": "Saber Más",
+    "getStarted": "Comenzar"
+  },
+  "infoModal": {
+    "close": "Cerrar"
+  },
+  "footer": {
+    "description": "Empoderando a las empresas con soluciones de IA inteligentes que transforman las operaciones y desbloquean nuevas posibilidades a través del procesamiento de conocimiento en tiempo real.",
+    "solutions": "Soluciones",
+    "company": "Empresa",
+    "resources": "Recursos",
+    "legal": "Legal",
+    "contactUs": "Contáctanos",
+    "newsletter": "Boletín",
+    "newsletterDescription": "Mantente actualizado con las últimas tendencias de IA y noticias de RAGtional.",
+    "newsletterPlaceholder": "Ingresa tu email",
+    "subscribe": "Suscribirse",
+    "allRightsReserved": "Todos los derechos reservados.",
+    "madeWithLove": "Hecho con",
+    "forAICommunity": "para la comunidad de IA"
+  },
+  "technology": {
+    "title": "Nuestro Stack Tecnológico",
+    "description": "Construido sobre tecnologías y frameworks de IA de vanguardia, nuestra plataforma ofrece rendimiento y confiabilidad de nivel empresarial.",
+    "realTimeIntegration": "Integración en Tiempo Real",
+    "realTimeDescription": "Nuestra plataforma se integra perfectamente con tu infraestructura existente, proporcionando procesamiento de datos en tiempo real e insights impulsados por IA.",
+    "realTimeProcessing": "Procesamiento en Tiempo Real",
+    "enterpriseSecurity": "Seguridad Empresarial",
+    "scalableArchitecture": "Arquitectura Escalable"
+  }
+}

@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import emailjs from '@emailjs/browser';
 import { EMAILJS_CONFIG, EMAILJS_TEMPLATES } from '../config/emailjs';
 
@@ -8,6 +9,7 @@ interface DemoModalProps {
 }
 
 const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
+  const { t } = useTranslation();
   const formRef = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState({
     name: '',
@@ -33,14 +35,14 @@ const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
     
     // Basic validation
     if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
-      setErrorMessage('Please fill in all required fields.');
+      setErrorMessage(t('demoModal.validation.requiredFields'));
       return;
     }
 
     // Email format validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
-      setErrorMessage('Please enter a valid email address.');
+      setErrorMessage(t('demoModal.validation.invalidEmail'));
       return;
     }
 
@@ -110,7 +112,7 @@ const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
                 <div className="modal-icon me-3">
                   <i className="fas fa-rocket fa-2x text-primary"></i>
                 </div>
-                <h4 className="modal-title fw-bold mb-0">Request a Demo</h4>
+                <h4 className="modal-title fw-bold mb-0">{t('demoModal.title')}</h4>
               </div>
               <button
                 type="button"
@@ -164,7 +166,7 @@ const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
                 <div className="row">
                   <div className="col-md-6 mb-3">
                     <label htmlFor="demo-name" className="form-label fw-bold">
-                      Full Name <span className="text-danger">*</span>
+                      {t('demoModal.form.name')} <span className="text-danger">*</span>
                     </label>
                     <input
                       type="text"
@@ -174,13 +176,13 @@ const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      placeholder="Enter your full name"
+                      placeholder={t('placeholders.fullName')}
                     />
                   </div>
                   
                   <div className="col-md-6 mb-3">
                     <label htmlFor="demo-email" className="form-label fw-bold">
-                      Email Address <span className="text-danger">*</span>
+                      {t('demoModal.form.email')} <span className="text-danger">*</span>
                     </label>
                     <input
                       type="email"
@@ -190,7 +192,7 @@ const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      placeholder="Enter your email address"
+                      placeholder={t('placeholders.emailAddress')}
                     />
                   </div>
                 </div>
@@ -206,13 +208,13 @@ const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
                     name="company"
                     value={formData.company}
                     onChange={handleInputChange}
-                    placeholder="Enter your company name"
+                    placeholder={t('placeholders.companyName')}
                   />
                 </div>
 
                 <div className="mb-4">
                   <label htmlFor="demo-message" className="form-label fw-bold">
-                    Tell us about your needs <span className="text-danger">*</span>
+                    {t('demoModal.form.message')} <span className="text-danger">*</span>
                   </label>
                   <textarea
                     className="form-control"
@@ -222,7 +224,7 @@ const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
                     value={formData.message}
                     onChange={handleInputChange}
                     required
-                    placeholder="Describe what you're looking to achieve with AI solutions..."
+                    placeholder={t('placeholders.demoMessage')}
                   ></textarea>
                 </div>
 
@@ -235,12 +237,12 @@ const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
                     {isSubmitting ? (
                       <>
                         <span className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
-                        Submitting Request...
+                        {t('demoModal.form.submitting')}
                       </>
                     ) : (
                       <>
                         <i className="fas fa-rocket me-2"></i>
-                        Request Demo
+                        {t('demoModal.form.submit')}
                       </>
                     )}
                   </button>
@@ -255,7 +257,7 @@ const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
                 className="btn btn-secondary"
                 onClick={onClose}
               >
-                Close
+                {t('demoModal.form.close')}
               </button>
             </div>
           </div>

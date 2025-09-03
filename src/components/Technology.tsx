@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 interface TechItemProps {
   icon: string;
@@ -29,6 +30,7 @@ const TechItem: React.FC<TechItemProps> = ({ icon, title, description, technolog
 };
 
 const Technology: React.FC = () => {
+  const { t } = useTranslation();
   const techStack = [
     {
       icon: 'fas fa-database',
@@ -61,10 +63,9 @@ const Technology: React.FC = () => {
       <div className="container">
         <div className="row text-center mb-5">
           <div className="col-lg-8 mx-auto">
-            <h2 className="display-5 fw-bold mb-3">Our Technology Stack</h2>
+            <h2 className="display-5 fw-bold mb-3">{t('technology.title')}</h2>
             <p className="lead text-muted">
-              Built on cutting-edge AI technologies and frameworks, our platform 
-              delivers enterprise-grade performance and reliability.
+              {t('technology.description')}
             </p>
           </div>
         </div>
@@ -78,23 +79,22 @@ const Technology: React.FC = () => {
         <div className="row mt-5">
           <div className="col-12 text-center">
             <div className="tech-showcase p-4 rounded-3">
-              <h4 className="fw-bold mb-3">Real-Time Integration</h4>
+              <h4 className="fw-bold mb-3">{t('technology.realTimeIntegration')}</h4>
               <p className="text-muted mb-4">
-                Our platform seamlessly integrates with your existing infrastructure, 
-                providing real-time data processing and AI-powered insights.
+                {t('technology.realTimeDescription')}
               </p>
               <div className="d-flex justify-content-center flex-wrap gap-3">
                 <div className="tech-badge">
                   <i className="fas fa-bolt text-warning me-2"></i>
-                  <span>Real-time Processing</span>
+                  <span>{t('technology.realTimeProcessing')}</span>
                 </div>
                 <div className="tech-badge">
                   <i className="fas fa-shield-alt text-success me-2"></i>
-                  <span>Enterprise Security</span>
+                  <span>{t('technology.enterpriseSecurity')}</span>
                 </div>
                 <div className="tech-badge">
                   <i className="fas fa-expand-arrows-alt text-info me-2"></i>
-                  <span>Scalable Architecture</span>
+                  <span>{t('technology.scalableArchitecture')}</span>
                 </div>
               </div>
             </div>

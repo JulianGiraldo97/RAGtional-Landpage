@@ -1,6 +1,6 @@
 {
   "hero": {
-    "title": "RAGtional:",
+    "title": "tional:",
     "subtitle": "IA Más Inteligente con Conocimiento en Tiempo Real",
     "description": "Transforma tu negocio con soluciones de IA de vanguardia impulsadas por Generación Aumentada de Recuperación (RAG), Modelos de Lenguaje Grande (LLMs), agentes inteligentes y chatbots personalizados. Accede a conocimiento en tiempo real y automatiza flujos de trabajo complejos con una precisión sin precedentes.",
     "getDemo": "Obtener Demo",
@@ -245,7 +245,53 @@
     "title": "Nuestras Soluciones",
     "description": "Soluciones de IA integrales diseñadas para transformar las operaciones de tu negocio y desbloquear nuevas posibilidades con automatización inteligente.",
     "learnMore": "Saber Más",
-    "getStarted": "Comenzar"
+    "getStarted": "Comenzar",
+    "items": {
+      "n8nWorkflows": {
+        "title": "Flujos de Trabajo n8n",
+        "description": "Automatiza procesos empresariales complejos con automatización de flujos de trabajo visual.",
+        "detailedDescription": "Transforma las operaciones de tu negocio con nuestra plataforma avanzada de automatización de flujos de trabajo n8n. Nuestra solución proporciona una interfaz visual de arrastrar y soltar que hace que la automatización compleja sea accesible para todos en tu organización. Con más de 500+ integraciones y capacidades de webhook personalizadas, puedes conectar cualquier sistema y automatizar cualquier proceso.",
+        "features": [
+          "Interfaz de arrastrar y soltar",
+          "500+ integraciones",
+          "Webhooks personalizados",
+          "Monitoreo en tiempo real"
+        ]
+      },
+      "ragPipelines": {
+        "title": "Pipelines RAG",
+        "description": "Construye sistemas inteligentes de recuperación de conocimiento con bases de datos vectoriales.",
+        "detailedDescription": "Desbloquea el poder de tus datos con nuestros pipelines de Generación Aumentada por Recuperación (RAG). Nuestra solución te permite construir sistemas inteligentes de recuperación de conocimiento que proporcionan respuestas precisas y conscientes del contexto combinando tus datos propietarios con modelos de lenguaje avanzados.",
+        "features": [
+          "Embeddings vectoriales",
+          "Búsqueda semántica",
+          "Procesamiento de documentos",
+          "Actualizaciones en tiempo real"
+        ]
+      },
+      "aiAgents": {
+        "title": "Agentes de IA",
+        "description": "Despliega agentes de IA autónomos para la ejecución de tareas complejas.",
+        "detailedDescription": "Despliega agentes de IA inteligentes que pueden ejecutar autónomamente tareas y flujos de trabajo complejos. Nuestros agentes de IA combinan capacidades de razonamiento avanzado con integración de herramientas, permitiéndoles manejar procesos de múltiples pasos mientras mantienen supervisión y control humano.",
+        "features": [
+          "Razonamiento de múltiples pasos",
+          "Integración de herramientas",
+          "Gestión de memoria",
+          "Supervisión humana"
+        ]
+      },
+      "customChatbots": {
+        "title": "Chatbots Personalizados",
+        "description": "Crea interfaces conversacionales inteligentes para tu negocio.",
+        "detailedDescription": "Construye interfaces conversacionales inteligentes que entienden el contexto de tu negocio y proporcionan asistencia personalizada a tus clientes y empleados. Nuestros chatbots personalizados aprovechan el procesamiento avanzado de lenguaje natural para entregar interacciones similares a las humanas en múltiples plataformas.",
+        "features": [
+          "Procesamiento de lenguaje natural",
+          "Soporte multiplataforma",
+          "Panel de análisis",
+          "Fácil personalización"
+        ]
+      }
+    }
   },
   "infoModal": {
     "close": "Cerrar"

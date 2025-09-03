@@ -1,6 +1,6 @@
 {
   "hero": {
-    "title": "RAGtional:",
+    "title": "tional:",
     "subtitle": "Smarter AI with Real-Time Knowledge",
     "description": "Transform your business with cutting-edge AI solutions powered by Retrieval-Augmented Generation (RAG), Large Language Models (LLMs), intelligent agents, and custom chatbots. Access real-time knowledge and automate complex workflows with unprecedented accuracy.",
     "getDemo": "Get a Demo",
@@ -245,7 +245,53 @@
     "title": "Our Solutions",
     "description": "Comprehensive AI solutions designed to transform your business operations and unlock new possibilities with intelligent automation.",
     "learnMore": "Learn More",
-    "getStarted": "Get Started"
+    "getStarted": "Get Started",
+    "items": {
+      "n8nWorkflows": {
+        "title": "n8n Workflows",
+        "description": "Automate complex business processes with visual workflow automation.",
+        "detailedDescription": "Transform your business operations with our advanced n8n workflow automation platform. Our solution provides a visual, drag-and-drop interface that makes complex automation accessible to everyone in your organization. With over 500+ integrations and custom webhook capabilities, you can connect any system and automate any process.",
+        "features": [
+          "Drag & drop interface",
+          "500+ integrations",
+          "Custom webhooks",
+          "Real-time monitoring"
+        ]
+      },
+      "ragPipelines": {
+        "title": "RAG Pipelines",
+        "description": "Build intelligent knowledge retrieval systems with vector databases.",
+        "detailedDescription": "Unlock the power of your data with our Retrieval-Augmented Generation (RAG) pipelines. Our solution enables you to build intelligent knowledge retrieval systems that provide accurate, context-aware responses by combining your proprietary data with advanced language models.",
+        "features": [
+          "Vector embeddings",
+          "Semantic search",
+          "Document processing",
+          "Real-time updates"
+        ]
+      },
+      "aiAgents": {
+        "title": "AI Agents",
+        "description": "Deploy autonomous AI agents for complex task execution.",
+        "detailedDescription": "Deploy intelligent AI agents that can autonomously execute complex tasks and workflows. Our AI agents combine advanced reasoning capabilities with tool integration, enabling them to handle multi-step processes while maintaining human oversight and control.",
+        "features": [
+          "Multi-step reasoning",
+          "Tool integration",
+          "Memory management",
+          "Human oversight"
+        ]
+      },
+      "customChatbots": {
+        "title": "Custom Chatbots",
+        "description": "Create intelligent conversational interfaces for your business.",
+        "detailedDescription": "Build intelligent conversational interfaces that understand your business context and provide personalized assistance to your customers and employees. Our custom chatbots leverage advanced natural language processing to deliver human-like interactions across multiple platforms.",
+        "features": [
+          "Natural language processing",
+          "Multi-platform support",
+          "Analytics dashboard",
+          "Easy customization"
+        ]
+      }
+    }
   },
   "infoModal": {
     "close": "Close"

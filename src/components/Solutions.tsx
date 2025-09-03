@@ -83,51 +83,31 @@ const Solutions: React.FC = () => {
   const solutions = [
     {
       icon: 'fas fa-project-diagram',
-      title: 'n8n Workflows',
-      description: 'Automate complex business processes with visual workflow automation.',
-      detailedDescription: 'Transform your business operations with our advanced n8n workflow automation platform. Our solution provides a visual, drag-and-drop interface that makes complex automation accessible to everyone in your organization. With over 500+ integrations and custom webhook capabilities, you can connect any system and automate any process.',
-      features: [
-        'Drag & drop interface',
-        '500+ integrations',
-        'Custom webhooks',
-        'Real-time monitoring'
-      ]
+      title: t('solutions.items.n8nWorkflows.title'),
+      description: t('solutions.items.n8nWorkflows.description'),
+      detailedDescription: t('solutions.items.n8nWorkflows.detailedDescription'),
+      features: t('solutions.items.n8nWorkflows.features', { returnObjects: true }) as string[]
     },
     {
       icon: 'fas fa-database',
-      title: 'RAG Pipelines',
-      description: 'Build intelligent knowledge retrieval systems with vector databases.',
-      detailedDescription: 'Unlock the power of your data with our Retrieval-Augmented Generation (RAG) pipelines. Our solution enables you to build intelligent knowledge retrieval systems that provide accurate, context-aware responses by combining your proprietary data with advanced language models.',
-      features: [
-        'Vector embeddings',
-        'Semantic search',
-        'Document processing',
-        'Real-time updates'
-      ]
+      title: t('solutions.items.ragPipelines.title'),
+      description: t('solutions.items.ragPipelines.description'),
+      detailedDescription: t('solutions.items.ragPipelines.detailedDescription'),
+      features: t('solutions.items.ragPipelines.features', { returnObjects: true }) as string[]
     },
     {
       icon: 'fas fa-robot',
-      title: 'AI Agents',
-      description: 'Deploy autonomous AI agents for complex task execution.',
-      detailedDescription: 'Deploy intelligent AI agents that can autonomously execute complex tasks and workflows. Our AI agents combine advanced reasoning capabilities with tool integration, enabling them to handle multi-step processes while maintaining human oversight and control.',
-      features: [
-        'Multi-step reasoning',
-        'Tool integration',
-        'Memory management',
-        'Human oversight'
-      ]
+      title: t('solutions.items.aiAgents.title'),
+      description: t('solutions.items.aiAgents.description'),
+      detailedDescription: t('solutions.items.aiAgents.detailedDescription'),
+      features: t('solutions.items.aiAgents.features', { returnObjects: true }) as string[]
     },
     {
       icon: 'fas fa-comments',
-      title: 'Custom Chatbots',
-      description: 'Create intelligent conversational interfaces for your business.',
-      detailedDescription: 'Build intelligent conversational interfaces that understand your business context and provide personalized assistance to your customers and employees. Our custom chatbots leverage advanced natural language processing to deliver human-like interactions across multiple platforms.',
-      features: [
-        'Natural language processing',
-        'Multi-platform support',
-        'Analytics dashboard',
-        'Easy customization'
-      ]
+      title: t('solutions.items.customChatbots.title'),
+      description: t('solutions.items.customChatbots.description'),
+      detailedDescription: t('solutions.items.customChatbots.detailedDescription'),
+      features: t('solutions.items.customChatbots.features', { returnObjects: true }) as string[]
     }
   ];
 

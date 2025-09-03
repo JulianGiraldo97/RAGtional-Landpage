@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
+require('dotenv').config();
 
 module.exports = {
   entry: './src/index.tsx',
@@ -43,6 +44,22 @@ module.exports = {
         {
           from: 'public/.nojekyll',
           to: '.nojekyll'
+        },
+        {
+          from: 'public/favicon*.png',
+          to: '[name][ext]'
+        },
+        {
+          from: 'public/apple-touch-icon.png',
+          to: 'apple-touch-icon.png'
+        },
+        {
+          from: 'public/android-chrome-*.png',
+          to: '[name][ext]'
+        },
+        {
+          from: 'public/site.webmanifest',
+          to: 'site.webmanifest'
         }
       ]
     }),

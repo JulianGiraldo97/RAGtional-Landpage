@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import emailjs from '@emailjs/browser';
 import DemoModal from './DemoModal';
-import { EMAILJS_CONFIG, EMAILJS_TEMPLATES } from '../config/emailjs';
+import { EMAILJS_CONFIG, EMAILJS_TEMPLATES, isEmailJSConfigured } from '../config/emailjs';
 
 const Contact: React.FC = () => {
   const { t } = useTranslation();
@@ -11,6 +11,8 @@ const Contact: React.FC = () => {
     name: '',
     email: '',
     company: '',
+    phone: '',
+    topic: '',
     message: ''
   });
 
@@ -46,18 +48,40 @@ const Contact: React.FC = () => {
     setIsSubmitting(true);
     setErrorMessage('');
     
+    // Check if EmailJS is properly configured
+    if (!isEmailJSConfigured()) {
+      console.error('EmailJS is not properly configured. Please check your environment variables.');
+      setSubmitStatus('error');
+      setErrorMessage('Email service is not configured. Please contact support.');
+      setIsSubmitting(false);
+      return;
+    }
+    
     try {
+      // Prepare template parameters
+      const templateParams = {
+        from_name: formData.name,
+        reply_to: formData.email,
+        company: formData.company,
+        phone: formData.phone,
+        topic: formData.topic,
+        message: formData.message,
+        submitted_at: new Date().toLocaleString(),
+        ip: 'N/A', // Will be filled by EmailJS
+        page_url: window.location.href
+      };
+
       // Send email using EmailJS
-      const result = await emailjs.sendForm(
+      const result = await emailjs.send(
         EMAILJS_CONFIG.SERVICE_ID,
         EMAILJS_TEMPLATES.CONTACT_FORM,
-        formRef.current!,
+        templateParams,
         EMAILJS_CONFIG.PUBLIC_KEY
       );
       
       if (result.status === 200) {
         setSubmitStatus('success');
-        setFormData({ name: '', email: '', company: '', message: '' });
+        setFormData({ name: '', email: '', company: '', phone: '', topic: '', message: '' });
         
         // Reset success message after 5 seconds
         setTimeout(() => setSubmitStatus('idle'), 5000);
@@ -225,18 +249,50 @@ const Contact: React.FC = () => {
                       </div>
                     </div>
 
+                    <div className="row">
+                      <div className="col-md-6 mb-3">
+                        <label htmlFor="company" className="form-label fw-bold">
+                          {t('contact.company')}
+                        </label>
+                        <input
+                          type="text"
+                          className="form-control"
+                          id="company"
+                          name="company"
+                          value={formData.company}
+                          onChange={handleInputChange}
+                          placeholder={t('placeholders.companyName')}
+                        />
+                      </div>
+                      
+                      <div className="col-md-6 mb-3">
+                        <label htmlFor="phone" className="form-label fw-bold">
+                          {t('contact.phone')}
+                        </label>
+                        <input
+                          type="tel"
+                          className="form-control"
+                          id="phone"
+                          name="phone"
+                          value={formData.phone}
+                          onChange={handleInputChange}
+                          placeholder={t('placeholders.phone')}
+                        />
+                      </div>
+                    </div>
+
                     <div className="mb-3">
-                      <label htmlFor="company" className="form-label fw-bold">
-                        {t('contact.company')}
+                      <label htmlFor="topic" className="form-label fw-bold">
+                        {t('contact.topic')}
                       </label>
                       <input
                         type="text"
                         className="form-control"
-                        id="company"
-                        name="company"
-                        value={formData.company}
+                        id="topic"
+                        name="topic"
+                        value={formData.topic}
                         onChange={handleInputChange}
-                        placeholder={t('placeholders.companyName')}
+                        placeholder={t('placeholders.topic')}
                       />
                     </div>
 

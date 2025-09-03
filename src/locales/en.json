@@ -112,6 +112,7 @@
   "demoModal": {
     "title": "Request a Demo",
     "subtitle": "See RAGtional in action and discover how our AI solutions can transform your business.",
+    "description": "Experience the power of RAGtional's AI solutions firsthand. Our team will schedule a personalized demo tailored to your business needs.",
     "form": {
       "name": "Full Name",
       "email": "Email Address",
@@ -161,6 +162,8 @@
     "fullName": "Enter your full name",
     "emailAddress": "Enter your email address",
     "companyName": "Enter your company name",
+    "phone": "Enter your phone number",
+    "topic": "What is this about?",
     "message": "Tell us about your project or how we can help...",
     "demoMessage": "Describe what you're looking to achieve with AI solutions..."
   },
@@ -176,6 +179,8 @@
     "fullName": "Full Name",
     "emailAddress": "Email Address",
     "company": "Company",
+    "phone": "Phone Number",
+    "topic": "Subject/Topic",
     "message": "Message",
     "sendMessageButton": "Send Message",
     "sendingMessage": "Sending Message...",
@@ -293,9 +298,6 @@
       }
     }
   },
-  "infoModal": {
-    "close": "Close"
-  },
   "footer": {
     "description": "Empowering businesses with intelligent AI solutions that transform operations and unlock new possibilities through real-time knowledge processing.",
     "solutions": "Solutions",
@@ -318,6 +320,28 @@
     "realTimeDescription": "Our platform seamlessly integrates with your existing infrastructure, providing real-time data processing and AI-powered insights.",
     "realTimeProcessing": "Real-time Processing",
     "enterpriseSecurity": "Enterprise Security",
-    "scalableArchitecture": "Scalable Architecture"
+    "scalableArchitecture": "Scalable Architecture",
+    "items": {
+      "vectorDatabases": {
+        "title": "Vector Databases",
+        "description": "High-performance vector storage for semantic search and similarity matching.",
+        "technologies": ["Pinecone", "Weaviate", "Qdrant", "Chroma"]
+      },
+      "largeLanguageModels": {
+        "title": "Large Language Models",
+        "description": "State-of-the-art language models for natural language understanding and generation.",
+        "technologies": ["OpenAI GPT-4", "Mistral AI", "Anthropic Claude", "Meta Llama"]
+      },
+      "n8nWorkflows": {
+        "title": "n8n Workflows",
+        "description": "Visual workflow automation platform for building complex business processes.",
+        "technologies": ["Visual Editor", "500+ Integrations", "Custom Nodes", "Workflow Templates"]
+      },
+      "documentIngestion": {
+        "title": "Document Ingestion",
+        "description": "Intelligent document processing and knowledge extraction pipeline.",
+        "technologies": ["PDF Processing", "OCR Integration", "Structured Data", "Real-time Sync"]
+      }
+    }
   }
 }

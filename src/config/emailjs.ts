@@ -1,31 +1,34 @@
 // EmailJS Configuration
-// These values should be replaced with your actual EmailJS credentials
-// For development, you can hardcode these values or use environment variables
+// This configuration uses environment variables for security
+// Make sure to set up your .env file with the required values
 
-// Option 1: Hardcode your credentials here (for quick testing)
+// Validate that required environment variables are present
+const validateEnvVar = (name: string, value: string | undefined): string => {
+  if (!value || value.includes('your_') || value.includes('_here')) {
+    console.warn(`EmailJS: ${name} is not properly configured. Please check your .env file.`);
+    return '';
+  }
+  return value;
+};
+
+// EmailJS Configuration using environment variables
 export const EMAILJS_CONFIG = {
-  SERVICE_ID: 'service_y2lccll',
-  TEMPLATE_ID: 'template_ma8ygz9',
-  USER_ID: 'your_user_id_here',
-  PUBLIC_KEY: '08y3DfC99ECkkf_TO'
+  SERVICE_ID: validateEnvVar('SERVICE_ID', process.env.REACT_APP_EMAILJS_SERVICE_ID),
+  PUBLIC_KEY: validateEnvVar('PUBLIC_KEY', process.env.REACT_APP_EMAILJS_PUBLIC_KEY)
 };
 
-// Option 2: Use environment variables (requires webpack configuration)
-// export const EMAILJS_CONFIG = {
-//   SERVICE_ID: process.env.REACT_APP_EMAILJS_SERVICE_ID || 'your_service_id_here',
-//   TEMPLATE_ID: process.env.REACT_APP_EMAILJS_TEMPLATE_ID || 'your_template_id_here',
-//   USER_ID: process.env.REACT_APP_EMAILJS_USER_ID || 'your_user_id_here',
-//   PUBLIC_KEY: process.env.REACT_APP_EMAILJS_PUBLIC_KEY || 'your_public_key_here'
-// };
-
-// Template IDs for different forms
+// Template IDs for different forms using environment variables
 export const EMAILJS_TEMPLATES = {
-  CONTACT_FORM: 'your_contact_template_id_here',
-  DEMO_REQUEST: 'your_demo_template_id_here'
+  CONTACT_FORM: validateEnvVar('CONTACT_TEMPLATE_ID', process.env.REACT_APP_EMAILJS_CONTACT_TEMPLATE_ID),
+  DEMO_REQUEST: validateEnvVar('DEMO_TEMPLATE_ID', process.env.REACT_APP_EMAILJS_DEMO_TEMPLATE_ID)
 };
 
-// Template IDs using environment variables (uncomment if using Option 2)
-// export const EMAILJS_TEMPLATES = {
-//   CONTACT_FORM: process.env.REACT_APP_EMAILJS_CONTACT_TEMPLATE_ID || 'your_contact_template_id_here',
-//   DEMO_REQUEST: process.env.REACT_APP_EMAILJS_DEMO_TEMPLATE_ID || 'your_demo_template_id_here'
-// };
+// Helper function to check if EmailJS is properly configured
+export const isEmailJSConfigured = (): boolean => {
+  return !!(
+    EMAILJS_CONFIG.SERVICE_ID &&
+    EMAILJS_CONFIG.PUBLIC_KEY &&
+    EMAILJS_TEMPLATES.CONTACT_FORM &&
+    EMAILJS_TEMPLATES.DEMO_REQUEST
+  );
+};

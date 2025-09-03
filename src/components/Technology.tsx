@@ -34,27 +34,27 @@ const Technology: React.FC = () => {
   const techStack = [
     {
       icon: 'fas fa-database',
-      title: 'Vector Databases',
-      description: 'High-performance vector storage for semantic search and similarity matching.',
-      technologies: ['Pinecone', 'Weaviate', 'Qdrant', 'Chroma']
+      title: t('technology.items.vectorDatabases.title'),
+      description: t('technology.items.vectorDatabases.description'),
+      technologies: t('technology.items.vectorDatabases.technologies', { returnObjects: true }) as string[]
     },
     {
       icon: 'fas fa-brain',
-      title: 'Large Language Models',
-      description: 'State-of-the-art language models for natural language understanding and generation.',
-      technologies: ['OpenAI GPT-4', 'Mistral AI', 'Anthropic Claude', 'Meta Llama']
+      title: t('technology.items.largeLanguageModels.title'),
+      description: t('technology.items.largeLanguageModels.description'),
+      technologies: t('technology.items.largeLanguageModels.technologies', { returnObjects: true }) as string[]
     },
     {
       icon: 'fas fa-project-diagram',
-      title: 'n8n Workflows',
-      description: 'Visual workflow automation platform for building complex business processes.',
-      technologies: ['Visual Editor', '500+ Integrations', 'Custom Nodes', 'Workflow Templates']
+      title: t('technology.items.n8nWorkflows.title'),
+      description: t('technology.items.n8nWorkflows.description'),
+      technologies: t('technology.items.n8nWorkflows.technologies', { returnObjects: true }) as string[]
     },
     {
       icon: 'fas fa-file-alt',
-      title: 'Document Ingestion',
-      description: 'Intelligent document processing and knowledge extraction pipeline.',
-      technologies: ['PDF Processing', 'OCR Integration', 'Structured Data', 'Real-time Sync']
+      title: t('technology.items.documentIngestion.title'),
+      description: t('technology.items.documentIngestion.description'),
+      technologies: t('technology.items.documentIngestion.technologies', { returnObjects: true }) as string[]
     }
   ];
 

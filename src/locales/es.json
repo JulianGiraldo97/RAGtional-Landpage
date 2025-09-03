@@ -112,6 +112,7 @@
   "demoModal": {
     "title": "Solicitar una Demo",
     "subtitle": "Ve RAGtional en acción y descubre cómo nuestras soluciones de IA pueden transformar tu negocio.",
+    "description": "Experimenta el poder de las soluciones de IA de RAGtional de primera mano. Nuestro equipo programará una demostración personalizada adaptada a las necesidades de tu negocio.",
     "form": {
       "name": "Nombre Completo",
       "email": "Dirección de Email",
@@ -161,6 +162,8 @@
     "fullName": "Ingresa tu nombre completo",
     "emailAddress": "Ingresa tu dirección de email",
     "companyName": "Ingresa el nombre de tu empresa",
+    "phone": "Ingresa tu número de teléfono",
+    "topic": "¿De qué se trata?",
     "message": "Cuéntanos sobre tu proyecto o cómo podemos ayudar...",
     "demoMessage": "Describe lo que buscas lograr con soluciones de IA..."
   },
@@ -176,6 +179,8 @@
     "fullName": "Nombre Completo",
     "emailAddress": "Dirección de Email",
     "company": "Empresa",
+    "phone": "Número de Teléfono",
+    "topic": "Asunto/Tema",
     "message": "Mensaje",
     "sendMessageButton": "Enviar Mensaje",
     "sendingMessage": "Enviando...",
@@ -293,9 +298,6 @@
       }
     }
   },
-  "infoModal": {
-    "close": "Cerrar"
-  },
   "footer": {
     "description": "Empoderando a las empresas con soluciones de IA inteligentes que transforman las operaciones y desbloquean nuevas posibilidades a través del procesamiento de conocimiento en tiempo real.",
     "solutions": "Soluciones",
@@ -318,6 +320,28 @@
     "realTimeDescription": "Nuestra plataforma se integra perfectamente con tu infraestructura existente, proporcionando procesamiento de datos en tiempo real e insights impulsados por IA.",
     "realTimeProcessing": "Procesamiento en Tiempo Real",
     "enterpriseSecurity": "Seguridad Empresarial",
-    "scalableArchitecture": "Arquitectura Escalable"
+    "scalableArchitecture": "Arquitectura Escalable",
+    "items": {
+      "vectorDatabases": {
+        "title": "Bases de Datos Vectoriales",
+        "description": "Almacenamiento vectorial de alto rendimiento para búsqueda semántica y coincidencia de similitud.",
+        "technologies": ["Pinecone", "Weaviate", "Qdrant", "Chroma"]
+      },
+      "largeLanguageModels": {
+        "title": "Modelos de Lenguaje Grande",
+        "description": "Modelos de lenguaje de última generación para comprensión y generación de lenguaje natural.",
+        "technologies": ["OpenAI GPT-4", "Mistral AI", "Anthropic Claude", "Meta Llama"]
+      },
+      "n8nWorkflows": {
+        "title": "Flujos de Trabajo n8n",
+        "description": "Plataforma de automatización de flujos de trabajo visual para construir procesos empresariales complejos.",
+        "technologies": ["Editor Visual", "500+ Integraciones", "Nodos Personalizados", "Plantillas de Flujo"]
+      },
+      "documentIngestion": {
+        "title": "Ingesta de Documentos",
+        "description": "Pipeline de procesamiento inteligente de documentos y extracción de conocimiento.",
+        "technologies": ["Procesamiento PDF", "Integración OCR", "Datos Estructurados", "Sincronización en Tiempo Real"]
+      }
+    }
   }
 }

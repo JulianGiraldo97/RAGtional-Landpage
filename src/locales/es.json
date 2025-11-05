@@ -8,6 +8,7 @@
   },
   "navbar": {
     "solutions": "Soluciones",
+    "services": "Servicios",
     "technology": "Tecnología",
     "useCases": "Casos de Uso",
     "contact": "Contacto",
@@ -341,6 +342,50 @@
         "title": "Ingesta de Documentos",
         "description": "Pipeline de procesamiento inteligente de documentos y extracción de conocimiento.",
         "technologies": ["Procesamiento PDF", "Integración OCR", "Datos Estructurados", "Sincronización en Tiempo Real"]
+      }
+    }
+  },
+  "services": {
+    "title": "Nuestros Servicios",
+    "description": "Servicios integrales de desarrollo y consultoría para transformar tu negocio con soluciones tecnológicas de vanguardia.",
+    "learnMore": "Saber Más",
+    "getStarted": "Comenzar",
+    "items": {
+      "webDevelopment": {
+        "title": "Desarrollo Web",
+        "description": "Desarrollo profesional de páginas web con tecnologías modernas y mejores prácticas.",
+        "detailedDescription": "Transforma tu presencia en línea con nuestros servicios profesionales de desarrollo web. Creamos sitios web modernos, responsivos y de alto rendimiento que cautivan a tu audiencia y generan resultados de negocio. Nuestro equipo se especializa en React, Next.js, TypeScript y otras tecnologías de vanguardia para ofrecer experiencias de usuario excepcionales en todos los dispositivos.",
+        "features": [
+          "Diseño responsivo",
+          "Frameworks modernos (React, Next.js)",
+          "Optimización SEO",
+          "Tiempos de carga rápidos",
+          "Enfoque mobile-first"
+        ]
+      },
+      "businessSoftware": {
+        "title": "Software Empresarial",
+        "description": "Soluciones de software empresarial personalizado incluyendo sistemas de inventario y POS.",
+        "detailedDescription": "Optimiza las operaciones de tu negocio con nuestras soluciones de software empresarial personalizado. Desarrollamos potentes sistemas de gestión de inventario que rastrean niveles de stock, gestionan proveedores y optimizan tu cadena de suministro. Nuestros sistemas POS (Punto de Venta) se integran perfectamente con tu inventario, proporcionando seguimiento de ventas en tiempo real, reportes y gestión de clientes. Todas las soluciones están adaptadas a las necesidades específicas de tu negocio y construidas pensando en la escalabilidad.",
+        "features": [
+          "Sistemas de gestión de inventario",
+          "Soluciones POS (Punto de Venta)",
+          "Reportes en tiempo real",
+          "Integraciones personalizadas",
+          "Basado en la nube o on-premise"
+        ]
+      },
+      "salesforceConsulting": {
+        "title": "Consultoría Salesforce",
+        "description": "Servicios expertos de implementación y optimización de Salesforce para maximizar el potencial de tu CRM.",
+        "detailedDescription": "Desbloquea todo el potencial de Salesforce con nuestros servicios expertos de consultoría. Nuestros consultores certificados de Salesforce te ayudan a implementar, personalizar y optimizar tu plataforma Salesforce para alinearla con tus procesos de negocio. Desde la configuración inicial hasta la automatización avanzada e integraciones, nos aseguramos de que tu inversión en Salesforce genere el máximo ROI y impulse el crecimiento del negocio.",
+        "features": [
+          "Implementación de Salesforce",
+          "Personalización y configuración",
+          "Automatización de procesos",
+          "Servicios de integración",
+          "Capacitación y soporte"
+        ]
       }
     }
   }

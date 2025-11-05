@@ -8,6 +8,7 @@
   },
   "navbar": {
     "solutions": "Solutions",
+    "services": "Services",
     "technology": "Technology",
     "useCases": "Use Cases",
     "contact": "Contact",
@@ -341,6 +342,50 @@
         "title": "Document Ingestion",
         "description": "Intelligent document processing and knowledge extraction pipeline.",
         "technologies": ["PDF Processing", "OCR Integration", "Structured Data", "Real-time Sync"]
+      }
+    }
+  },
+  "services": {
+    "title": "Our Services",
+    "description": "Comprehensive development and consulting services to transform your business with cutting-edge technology solutions.",
+    "learnMore": "Learn More",
+    "getStarted": "Get Started",
+    "items": {
+      "webDevelopment": {
+        "title": "Web Development",
+        "description": "Professional website development with modern technologies and best practices.",
+        "detailedDescription": "Transform your online presence with our professional web development services. We create modern, responsive, and high-performance websites that engage your audience and drive business results. Our team specializes in React, Next.js, TypeScript, and other cutting-edge technologies to deliver exceptional user experiences across all devices.",
+        "features": [
+          "Responsive design",
+          "Modern frameworks (React, Next.js)",
+          "SEO optimization",
+          "Fast loading times",
+          "Mobile-first approach"
+        ]
+      },
+      "businessSoftware": {
+        "title": "Enterprise Software",
+        "description": "Custom business software solutions including inventory management and POS systems.",
+        "detailedDescription": "Streamline your business operations with our custom enterprise software solutions. We develop powerful inventory management systems that track stock levels, manage suppliers, and optimize your supply chain. Our POS (Point of Sale) systems integrate seamlessly with your inventory, providing real-time sales tracking, reporting, and customer management. All solutions are tailored to your specific business needs and built with scalability in mind.",
+        "features": [
+          "Inventory management systems",
+          "POS (Point of Sale) solutions",
+          "Real-time reporting",
+          "Custom integrations",
+          "Cloud-based or on-premise"
+        ]
+      },
+      "salesforceConsulting": {
+        "title": "Salesforce Consulting",
+        "description": "Expert Salesforce implementation and optimization services to maximize your CRM potential.",
+        "detailedDescription": "Unlock the full potential of Salesforce with our expert consulting services. Our certified Salesforce consultants help you implement, customize, and optimize your Salesforce platform to align with your business processes. From initial setup and configuration to advanced automation and integration, we ensure your Salesforce investment delivers maximum ROI and drives business growth.",
+        "features": [
+          "Salesforce implementation",
+          "Customization & configuration",
+          "Process automation",
+          "Integration services",
+          "Training & support"
+        ]
       }
     }
   }

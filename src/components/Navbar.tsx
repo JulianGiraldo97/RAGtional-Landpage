@@ -17,6 +17,7 @@ const Navbar: React.FC = () => {
 
   const navLinks = [
     { name: t('navbar.solutions'), href: '#solutions' },
+    { name: t('navbar.services'), href: '#services' },
     { name: t('navbar.technology'), href: '#technology' },
     { name: t('navbar.useCases'), href: '#use-cases' },
     { name: t('navbar.contact'), href: '#contact' },

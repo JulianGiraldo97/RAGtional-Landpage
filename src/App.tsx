@@ -3,6 +3,7 @@ import { ThemeProvider } from './contexts/ThemeContext';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Solutions from './components/Solutions';
+import Services from './components/Services';
 import Technology from './components/Technology';
 import UseCases from './components/UseCases';
 import Contact from './components/Contact';
@@ -17,6 +18,7 @@ const App: React.FC = () => {
         <main>
           <Hero />
           <Solutions />
+          <Services />
           <Technology />
           <UseCases />
           <Contact />

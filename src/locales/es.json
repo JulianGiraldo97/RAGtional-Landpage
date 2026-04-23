@@ -175,7 +175,7 @@
     "letsStartConversation": "Iniciemos una Conversación",
     "conversationDescription": "Ya sea que busques implementar soluciones RAG, desplegar agentes de IA, o construir chatbots personalizados, nuestro equipo está aquí para ayudarte a tener éxito.",
     "callUs": "Llámanos",
-    "emailUs": "Envíanos un Email",
+    "whatsappUs": "Escríbenos por WhatsApp",
     "followUs": "Síguenos",
     "sendMessage": "Envíanos un Mensaje",
     "fullName": "Nombre Completo",
@@ -429,5 +429,15 @@
     "q7": "¿Cómo es su proceso de desarrollo?",
     "a7": "Seguimos un proceso ágil: descubrimiento y alcance → diseño → desarrollo iterativo con demos semanales → QA → lanzamiento → soporte. Tienes visibilidad total en cada etapa a través de herramientas de gestión compartidas.",
     "stillHaveQuestions": "¿Tienes más preguntas? Con gusto te ayudamos."
+  },
+  "legal": {
+    "privacyTitle": "Política de Tratamiento de Datos Personales",
+    "termsTitle": "Términos y Condiciones",
+    "cookiesTitle": "Política de Cookies",
+    "privacyLink": "Política de Privacidad",
+    "termsLink": "Términos y Condiciones",
+    "cookiesLink": "Política de Cookies",
+    "consent": "He leído y acepto la <link>Política de Tratamiento de Datos Personales</link> conforme a la Ley 1581 de 2012.",
+    "consentRequired": "Debes aceptar la política de tratamiento de datos para enviar el formulario."
   }
 }

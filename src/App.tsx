@@ -10,6 +10,7 @@ import UseCases from './components/UseCases';
 import FAQ from './components/FAQ';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import { LegalModals } from './components/LegalModal';
 import './i18n';
 
 const App: React.FC = () => {
@@ -28,6 +29,7 @@ const App: React.FC = () => {
           <Contact />
         </main>
         <Footer />
+        <LegalModals />
       </div>
     </ThemeProvider>
   );

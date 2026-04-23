@@ -175,7 +175,7 @@
     "letsStartConversation": "Let's Start a Conversation",
     "conversationDescription": "Whether you're looking to implement RAG solutions, deploy AI agents, or build custom chatbots, our team is here to help you succeed.",
     "callUs": "Call Us",
-    "emailUs": "Email Us",
+    "whatsappUs": "Chat on WhatsApp",
     "followUs": "Follow Us",
     "sendMessage": "Send us a Message",
     "fullName": "Full Name",
@@ -429,5 +429,15 @@
     "q7": "What is your development process?",
     "a7": "We follow an agile process: discovery & scoping → design → iterative development with weekly demos → QA → launch → support. You have full visibility at every stage through shared project management tools.",
     "stillHaveQuestions": "Still have questions? We're happy to help."
+  },
+  "legal": {
+    "privacyTitle": "Privacy Policy · Política de Tratamiento de Datos",
+    "termsTitle": "Terms & Conditions · Términos y Condiciones",
+    "cookiesTitle": "Cookie Policy · Política de Cookies",
+    "privacyLink": "Privacy Policy",
+    "termsLink": "Terms & Conditions",
+    "cookiesLink": "Cookie Policy",
+    "consent": "I have read and accept the <link>Personal Data Treatment Policy</link> in accordance with Colombian Law 1581 of 2012.",
+    "consentRequired": "You must accept the data treatment policy to send the form."
   }
 }

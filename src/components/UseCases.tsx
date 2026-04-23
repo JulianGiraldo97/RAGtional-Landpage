@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import InfoModal from './InfoModal';
-import DemoModal from './DemoModal';
 
 interface UseCaseProps {
   icon: string;
@@ -91,7 +90,6 @@ const UseCase: React.FC<UseCaseProps> = ({
 
 const UseCases: React.FC = () => {
   const { t } = useTranslation();
-  const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
   const useCases = [
     {
       icon: 'fas fa-users-cog',
@@ -145,20 +143,20 @@ const UseCases: React.FC = () => {
                 {t('useCases.cta.description')}
               </p>
               <div className="d-flex justify-content-center flex-wrap gap-3">
-                <button 
+                <a
                   className="btn btn-primary btn-lg px-4 py-3"
-                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                  href="#contact"
                 >
                   <i className="fas fa-rocket me-2"></i>
                   {t('useCases.cta.startJourney')}
-                </button>
-                <button 
+                </a>
+                <a
                   className="btn btn-outline-primary btn-lg px-4 py-3"
-                  onClick={() => setIsDemoModalOpen(true)}
+                  href="#contact"
                 >
-                  <i className="fas fa-calendar me-2"></i>
+                  <i className="fas fa-comments me-2"></i>
                   {t('useCases.cta.scheduleDemo')}
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -220,10 +218,6 @@ const UseCases: React.FC = () => {
         }
       `}</style>
       
-      <DemoModal
-        isOpen={isDemoModalOpen}
-        onClose={() => setIsDemoModalOpen(false)}
-      />
     </section>
   );
 };

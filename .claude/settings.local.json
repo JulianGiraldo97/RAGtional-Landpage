@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -E \"\\\\.\\(tsx?|jsx?\\)$\")",
+      "Bash(mkdir -p \"/Users/juliangiraldo/Documents/Obsidian/Knowledge Base/Personal/RAGtional/Landing Page\")",
+      "Bash(mkdir -p \"/Users/juliangiraldo/Documents/Obsidian/Knowledge Base/Personal/RAGtional/Strategy\")",
+      "Bash(npx tsc *)"
+    ]
+  }
+}

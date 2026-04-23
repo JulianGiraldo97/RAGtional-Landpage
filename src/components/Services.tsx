@@ -89,11 +89,11 @@ const Services: React.FC = () => {
       features: t('services.items.webDevelopment.features', { returnObjects: true }) as string[]
     },
     {
-      icon: 'fas fa-building',
-      title: t('services.items.businessSoftware.title'),
-      description: t('services.items.businessSoftware.description'),
-      detailedDescription: t('services.items.businessSoftware.detailedDescription'),
-      features: t('services.items.businessSoftware.features', { returnObjects: true }) as string[]
+      icon: 'fas fa-mobile-alt',
+      title: t('services.items.mobileDevelopment.title'),
+      description: t('services.items.mobileDevelopment.description'),
+      detailedDescription: t('services.items.mobileDevelopment.detailedDescription'),
+      features: t('services.items.mobileDevelopment.features', { returnObjects: true }) as string[]
     },
     {
       icon: 'fas fa-cloud',

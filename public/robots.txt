@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://juliangiraldo97.github.io/RAGtional-Landpage/sitemap.xml

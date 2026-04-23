@@ -1,7 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import emailjs from '@emailjs/browser';
-import DemoModal from './DemoModal';
 import { EMAILJS_CONFIG, EMAILJS_TEMPLATES, isEmailJSConfigured } from '../config/emailjs';
 
 const Contact: React.FC = () => {
@@ -19,7 +18,6 @@ const Contact: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
-  const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -347,17 +345,20 @@ const Contact: React.FC = () => {
                 {t('contact.scheduleConsultation')}
               </p>
               <div className="d-flex justify-content-center flex-wrap gap-3">
-                <button 
+                <button
                   className="btn btn-primary btn-lg px-4 py-3"
-                  onClick={() => setIsDemoModalOpen(true)}
+                  onClick={() => document.getElementById('name')?.focus()}
                 >
-                  <i className="fas fa-calendar me-2"></i>
+                  <i className="fas fa-rocket me-2"></i>
                   {t('contact.scheduleDemo')}
                 </button>
-                <button className="btn btn-outline-primary btn-lg px-4 py-3">
-                  <i className="fas fa-download me-2"></i>
+                <a
+                  className="btn btn-outline-primary btn-lg px-4 py-3"
+                  href="#use-cases"
+                >
+                  <i className="fas fa-eye me-2"></i>
                   {t('contact.downloadBrochure')}
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -428,10 +429,6 @@ const Contact: React.FC = () => {
         }
       `}</style>
       
-      <DemoModal 
-        isOpen={isDemoModalOpen}
-        onClose={() => setIsDemoModalOpen(false)}
-      />
     </section>
   );
 };

@@ -1,10 +1,10 @@
 {
   "hero": {
     "title": "tional:",
-    "subtitle": "IA Más Inteligente con Conocimiento en Tiempo Real",
-    "description": "Transforma tu negocio con soluciones de IA de vanguardia impulsadas por Generación Aumentada de Recuperación (RAG), Modelos de Lenguaje Grande (LLMs), agentes inteligentes y chatbots personalizados. Accede a conocimiento en tiempo real y automatiza flujos de trabajo complejos con una precisión sin precedentes.",
-    "getDemo": "Obtener Demo",
-    "learnMore": "Saber Más"
+    "subtitle": "Software, IA y Soluciones Cloud",
+    "description": "Desarrollo de software personalizado, apps móviles, agentes de IA y consultoría Salesforce. Construimos la tecnología que tu negocio necesita para crecer — desde aplicaciones web y móviles hasta automatización inteligente.",
+    "getDemo": "Iniciar Proyecto",
+    "learnMore": "Ver Servicios"
   },
   "navbar": {
     "solutions": "Soluciones",
@@ -12,7 +12,8 @@
     "technology": "Tecnología",
     "useCases": "Casos de Uso",
     "contact": "Contacto",
-    "getDemo": "Obtener Demo"
+    "faq": "FAQ",
+    "getDemo": "Contáctanos"
   },
   "solutions": {
     "title": "Nuestras Soluciones",
@@ -191,10 +192,10 @@
       "requiredFields": "Por favor, rellena todos los campos obligatorios.",
       "invalidEmail": "Por favor, introduce una dirección de correo electrónico válida."
     },
-    "readyToGetStarted": "¿Listo para Comenzar?",
-    "scheduleConsultation": "Programa una consulta gratuita con nuestros expertos en IA y descubre cómo RAGtional puede transformar las operaciones de tu negocio.",
-    "scheduleDemo": "Programar Demo",
-    "downloadBrochure": "Descargar Folleto"
+    "readyToGetStarted": "¿Listo para Iniciar tu Proyecto?",
+    "scheduleConsultation": "Cuéntanos sobre tu proyecto. Nuestro equipo te responderá en menos de 24 horas para explorar cómo podemos ayudarte.",
+    "scheduleDemo": "Iniciar Proyecto",
+    "downloadBrochure": "Ver Nuestro Trabajo"
   },
   "useCases": {
     "title": "Casos de Uso del Mundo Real",
@@ -206,7 +207,7 @@
       "title": "¿Listo para Transformar tu Negocio?",
       "description": "Únete a cientos de empresas que ya están usando RAGtional para automatizar sus operaciones y desbloquear el poder de la IA.",
       "startJourney": "Inicia tu Viaje",
-      "scheduleDemo": "Programar una Demostración"
+      "scheduleDemo": "Hablar con un Experto"
     },
     "cases": {
       "knowledgeAssistant": {
@@ -363,16 +364,16 @@
           "Enfoque mobile-first"
         ]
       },
-      "businessSoftware": {
-        "title": "Software Empresarial",
-        "description": "Soluciones de software empresarial personalizado incluyendo sistemas de inventario y POS.",
-        "detailedDescription": "Optimiza las operaciones de tu negocio con nuestras soluciones de software empresarial personalizado. Desarrollamos potentes sistemas de gestión de inventario que rastrean niveles de stock, gestionan proveedores y optimizan tu cadena de suministro. Nuestros sistemas POS (Punto de Venta) se integran perfectamente con tu inventario, proporcionando seguimiento de ventas en tiempo real, reportes y gestión de clientes. Todas las soluciones están adaptadas a las necesidades específicas de tu negocio y construidas pensando en la escalabilidad.",
+      "mobileDevelopment": {
+        "title": "Desarrollo Móvil",
+        "description": "Apps móviles nativas y multiplataforma para iOS y Android.",
+        "detailedDescription": "Construimos aplicaciones móviles de alto rendimiento para iOS y Android con React Native y tecnologías nativas. Desde el concepto hasta el lanzamiento en la App Store, nuestro equipo entrega apps pulidas y amigables que conectan con tus clientes y generan resultados de negocio. Nos encargamos de diseño UI/UX, desarrollo, pruebas y publicación.",
         "features": [
-          "Sistemas de gestión de inventario",
-          "Soluciones POS (Punto de Venta)",
-          "Reportes en tiempo real",
-          "Integraciones personalizadas",
-          "Basado en la nube o on-premise"
+          "Desarrollo iOS y Android",
+          "React Native / multiplataforma",
+          "Diseño UI/UX incluido",
+          "Publicación en App Store y Play Store",
+          "Notificaciones push y analítica"
         ]
       },
       "salesforceConsulting": {
@@ -388,5 +389,45 @@
         ]
       }
     }
+  },
+  "socialProof": {
+    "tagline": "Por qué los equipos eligen RAGtional",
+    "items": {
+      "fullStack": {
+        "title": "Equipos Full-Stack",
+        "description": "Web, móvil, IA y Salesforce — un solo equipo, cero fricciones"
+      },
+      "bilingual": {
+        "title": "Servicio EN / ES",
+        "description": "Español e inglés nativos para proyectos LATAM y globales"
+      },
+      "endToEnd": {
+        "title": "De Punta a Punta",
+        "description": "Diseño, desarrollo, despliegue y soporte continuo"
+      },
+      "aiNative": {
+        "title": "IA Nativa",
+        "description": "Capacidades de IA disponibles en cada uno de nuestros servicios"
+      }
+    }
+  },
+  "faq": {
+    "title": "Preguntas Frecuentes",
+    "description": "Todo lo que necesitas saber antes de iniciar tu proyecto.",
+    "q1": "¿Con qué tipo de empresas trabajan?",
+    "a1": "Trabajamos con startups, PYMEs y equipos corporativos en Latinoamérica y a nivel global. Ya sea que necesites un primer MVP o un sistema empresarial complejo, nuestro equipo se adapta a tu escala y presupuesto.",
+    "q2": "¿Cuánto cuesta desarrollar un proyecto de software?",
+    "a2": "Cada proyecto es único — el costo depende del alcance, la complejidad y el tiempo. Ofrecemos precios transparentes por hitos. Contáctanos con tus requerimientos y te daremos un estimado detallado en 24–48 horas.",
+    "q3": "¿Cuánto tiempo toma un proyecto típico?",
+    "a3": "Un MVP web típicamente toma entre 6 y 12 semanas. Las apps móviles generalmente entre 8 y 16 semanas según las funcionalidades. Las implementaciones de Salesforce varían de 4 a 20 semanas según la complejidad. Te damos un cronograma realista desde el inicio.",
+    "q4": "¿Trabajan con clientes fuera de Colombia?",
+    "a4": "Sí — nuestro equipo es completamente bilingüe (inglés y español) y trabaja de forma remota con clientes en LATAM, Estados Unidos, Europa y más. Las zonas horarias nunca son un obstáculo.",
+    "q5": "¿Qué incluye el desarrollo móvil?",
+    "a5": "Nuestros paquetes móviles incluyen diseño UI/UX, desarrollo iOS y Android con React Native, integración de backend, pruebas de calidad y envío a App Store y Play Store. Manejamos todo el proceso.",
+    "q6": "¿Ofrecen soporte y mantenimiento después del lanzamiento?",
+    "a6": "Sí. Ofrecemos planes de mantenimiento y soporte post-lanzamiento que incluyen corrección de errores, monitoreo de rendimiento, actualizaciones y nuevas funcionalidades. Somos un socio a largo plazo, no un proveedor puntual.",
+    "q7": "¿Cómo es su proceso de desarrollo?",
+    "a7": "Seguimos un proceso ágil: descubrimiento y alcance → diseño → desarrollo iterativo con demos semanales → QA → lanzamiento → soporte. Tienes visibilidad total en cada etapa a través de herramientas de gestión compartidas.",
+    "stillHaveQuestions": "¿Tienes más preguntas? Con gusto te ayudamos."
   }
 }

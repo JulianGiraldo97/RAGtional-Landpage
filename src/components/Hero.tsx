@@ -1,11 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import BannerImage from '../assets/banner.svg';
-import DemoModal from './DemoModal';
 
 const Hero: React.FC = () => {
   const { t } = useTranslation();
-  const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
 
   return (
     <section className="hero-section d-flex align-items-center min-vh-100" style={{ paddingTop: '80px' }}>
@@ -22,17 +20,20 @@ const Hero: React.FC = () => {
                 {t('hero.description')}
               </p>
               <div className="d-flex flex-wrap gap-3">
-                <button 
+                <a
                   className="btn btn-primary btn-lg px-4 py-3"
-                  onClick={() => setIsDemoModalOpen(true)}
+                  href="#contact"
                 >
-                  <i className="fas fa-play me-2"></i>
+                  <i className="fas fa-rocket me-2"></i>
                   {t('hero.getDemo')}
-                </button>
-                <button className="btn btn-outline-primary btn-lg px-4 py-3">
+                </a>
+                <a
+                  className="btn btn-outline-primary btn-lg px-4 py-3"
+                  href="#services"
+                >
                   <i className="fas fa-arrow-right me-2"></i>
                   {t('hero.learnMore')}
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -66,10 +67,6 @@ const Hero: React.FC = () => {
         }
       `}</style>
       
-      <DemoModal 
-        isOpen={isDemoModalOpen}
-        onClose={() => setIsDemoModalOpen(false)}
-      />
     </section>
   );
 };

@@ -2,13 +2,11 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '../contexts/ThemeContext';
 import Logo from '../assets/logo.svg';
-import DemoModal from './DemoModal';
 
 const Navbar: React.FC = () => {
   const { t, i18n } = useTranslation();
   const { isDarkMode, toggleTheme } = useTheme();
   const [isNavCollapsed, setIsNavCollapsed] = useState(true);
-  const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
 
   const toggleLanguage = () => {
     const newLang = i18n.language === 'en' ? 'es' : 'en';
@@ -20,6 +18,7 @@ const Navbar: React.FC = () => {
     { name: t('navbar.services'), href: '#services' },
     { name: t('navbar.technology'), href: '#technology' },
     { name: t('navbar.useCases'), href: '#use-cases' },
+    { name: t('navbar.faq'), href: '#faq' },
     { name: t('navbar.contact'), href: '#contact' },
   ];
 
@@ -72,21 +71,16 @@ const Navbar: React.FC = () => {
               >
                 <i className={`fas fa-${isDarkMode ? 'sun' : 'moon'}`}></i>
               </button>
-              <button 
+              <a
                 className="btn btn-primary btn-sm"
-                onClick={() => setIsDemoModalOpen(true)}
+                href="#contact"
               >
                 {t('navbar.getDemo')}
-              </button>
+              </a>
             </div>
           </div>
         </div>
       </nav>
-      
-      <DemoModal 
-        isOpen={isDemoModalOpen}
-        onClose={() => setIsDemoModalOpen(false)}
-      />
     </>
   );
 };

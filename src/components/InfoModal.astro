@@ -1,0 +1,94 @@
+---
+import type { Lang } from '../i18n/ui';
+import { getTranslations } from '../i18n/utils';
+
+interface Props {
+  id: string;
+  lang: Lang;
+  title: string;
+  description: string;
+  icon?: string;
+  features?: string[];
+  ctaText?: string;
+  ctaHref?: string;
+}
+
+const { id, lang, title, description, icon, features, ctaText, ctaHref = '#contact' } = Astro.props;
+const t = getTranslations(lang);
+---
+<div class="modal fade" id={id} tabindex="-1" aria-labelledby={`${id}Label`} aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content border-0 shadow-lg">
+      <div class="modal-header border-0 pb-0">
+        <div class="d-flex align-items-center">
+          {icon && (
+            <div class="modal-icon me-3">
+              <i class={`${icon} fa-2x text-primary`}></i>
+            </div>
+          )}
+          <h4 class="modal-title fw-bold mb-0" id={`${id}Label`}>{title}</h4>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body pt-0">
+        <p class="lead text-muted mb-4">{description}</p>
+
+        {features && features.length > 0 && (
+          <div class="features-section mb-4">
+            <h6 class="fw-bold mb-3">{t.infoModal.keyFeatures}</h6>
+            <div class="row">
+              {features.map((feature) => (
+                <div class="col-md-6 mb-2">
+                  <div class="d-flex align-items-start">
+                    <i class="fas fa-check-circle text-success me-2 mt-1"></i>
+                    <span>{feature}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <div class="additional-info p-4 rounded-3">
+          <h6 class="fw-bold mb-3">{t.infoModal.whyChoose}</h6>
+          <p class="text-muted mb-0">{t.infoModal.whyChooseDescription(title)}</p>
+        </div>
+      </div>
+
+      <div class="modal-footer border-0 pt-0">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{t.infoModal.close}</button>
+        {ctaText && (
+          <a class="btn btn-primary" href={ctaHref} data-bs-dismiss="modal">{ctaText}</a>
+        )}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .modal-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(0, 123, 255, 0.1), rgba(102, 16, 242, 0.1));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .additional-info {
+    background: linear-gradient(135deg, rgba(0, 123, 255, 0.05), rgba(102, 16, 242, 0.05));
+    border: 1px solid rgba(0, 123, 255, 0.1);
+  }
+  :global([data-bs-theme="dark"]) .modal-content {
+    background: var(--bs-dark);
+    color: var(--bs-light);
+  }
+  :global([data-bs-theme="dark"]) .modal-icon {
+    background: linear-gradient(135deg, rgba(0, 123, 255, 0.2), rgba(102, 16, 242, 0.2));
+  }
+  :global([data-bs-theme="dark"]) .additional-info {
+    background: linear-gradient(135deg, rgba(0, 123, 255, 0.1), rgba(102, 16, 242, 0.1));
+    border-color: rgba(0, 123, 255, 0.2);
+  }
+</style>

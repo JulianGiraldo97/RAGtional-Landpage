@@ -1,0 +1,99 @@
+---
+import type { Lang } from '../i18n/ui';
+import { getTranslations } from '../i18n/utils';
+import InfoModal from './InfoModal.astro';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = getTranslations(lang);
+
+const services = [
+  { key: 'webDevelopment', icon: 'fas fa-globe', ...t.services.items.webDevelopment },
+  { key: 'mobileDevelopment', icon: 'fas fa-mobile-alt', ...t.services.items.mobileDevelopment },
+  { key: 'salesforceConsulting', icon: 'fas fa-cloud', ...t.services.items.salesforceConsulting },
+];
+---
+<section id="services" class="py-5 bg-light">
+  <div class="container">
+    <div class="row text-center mb-5">
+      <div class="col-lg-8 mx-auto">
+        <h2 class="display-5 fw-bold mb-3">{t.services.title}</h2>
+        <p class="lead text-muted">{t.services.description}</p>
+      </div>
+    </div>
+
+    <div class="row">
+      {services.map((s) => (
+        <div class="col-lg-4 col-xl-4 mb-4">
+          <div class="card h-100 service-card border-0 shadow-sm">
+            <div class="card-body p-4">
+              <div class="service-icon mb-3">
+                <i class={`${s.icon} fa-2x text-primary`}></i>
+              </div>
+              <h5 class="card-title fw-bold mb-3">{s.title}</h5>
+              <p class="card-text text-muted mb-3">{s.description}</p>
+              <ul class="list-unstyled">
+                {s.features.map((feature) => (
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i>{feature}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div class="card-footer bg-transparent border-0">
+              <button
+                type="button"
+                class="btn btn-outline-primary w-100"
+                data-bs-toggle="modal"
+                data-bs-target={`#serviceModal-${s.key}`}
+              >{t.services.learnMore}</button>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  {services.map((s) => (
+    <InfoModal
+      id={`serviceModal-${s.key}`}
+      lang={lang}
+      title={s.title}
+      description={s.detailedDescription}
+      icon={s.icon}
+      features={s.features}
+      ctaText={t.services.getStarted}
+    />
+  ))}
+</section>
+
+<style>
+  .service-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 16px;
+    background: var(--bs-white);
+  }
+  .service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 123, 255, 0.15) !important;
+  }
+  .service-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(0, 123, 255, 0.1), rgba(102, 16, 242, 0.1));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  :global([data-bs-theme="dark"]) .service-card {
+    background: var(--bs-dark);
+    color: var(--bs-light);
+  }
+  :global([data-bs-theme="dark"]) .service-icon {
+    background: linear-gradient(135deg, rgba(0, 123, 255, 0.2), rgba(102, 16, 242, 0.2));
+  }
+  :global([data-bs-theme="dark"]) #services {
+    background: var(--bs-dark) !important;
+  }
+</style>

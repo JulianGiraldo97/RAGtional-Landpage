@@ -1,0 +1,97 @@
+---
+import type { Lang } from '../../i18n/ui';
+import { getTranslations } from '../../i18n/utils';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = getTranslations(lang);
+---
+<div class="modal fade" id="modalTerms" tabindex="-1" aria-labelledby="modalTermsLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header border-0 pb-0">
+        <h5 class="modal-title fw-bold" id="modalTermsLabel">{t.legal.termsTitle}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body px-4 py-3 legal-content">
+        <p class="text-muted small">Última actualización: 23 de abril de 2026</p>
+
+        <h6 class="fw-bold mt-3">1. Objeto</h6>
+        <p>
+          Los presentes Términos y Condiciones regulan el uso del sitio web de <strong>RAGtional</strong>
+          y la contratación de sus servicios de desarrollo de software, aplicaciones móviles,
+          consultoría Salesforce y agentes de inteligencia artificial, de conformidad con la
+          <strong> Ley 527 de 1999</strong> (Comercio Electrónico) y la <strong>Ley 1480 de 2011</strong>
+          (Estatuto del Consumidor) de Colombia.
+        </p>
+
+        <h6 class="fw-bold mt-3">2. Servicios Ofrecidos</h6>
+        <p>RAGtional presta servicios de:</p>
+        <ul>
+          <li>Desarrollo de aplicaciones web (React, Next.js, TypeScript, Astro)</li>
+          <li>Desarrollo de aplicaciones móviles iOS y Android (React Native)</li>
+          <li>Consultoría e implementación de Salesforce</li>
+          <li>Desarrollo de agentes de inteligencia artificial y soluciones RAG</li>
+          <li>Automatización de flujos con n8n y herramientas similares</li>
+        </ul>
+        <p>
+          Los alcances, costos y plazos de cada proyecto se definen en una propuesta o contrato
+          independiente firmado entre las partes.
+        </p>
+
+        <h6 class="fw-bold mt-3">3. Uso del Sitio Web</h6>
+        <p>
+          El usuario se compromete a utilizar este sitio con fines lícitos y a no realizar
+          actividades que puedan dañar, inutilizar o deteriorar el sitio o sus contenidos.
+          Los canales de contacto deben utilizarse exclusivamente para consultas legítimas
+          relacionadas con los servicios ofrecidos.
+        </p>
+
+        <h6 class="fw-bold mt-3">4. Propiedad Intelectual</h6>
+        <p>
+          Los contenidos de este sitio (textos, logotipos, diseño, código) son propiedad de
+          RAGtional y están protegidos por la <strong>Ley 23 de 1982</strong> y la
+          <strong> Decisión Andina 351 de 1993</strong> sobre derechos de autor.
+          Queda prohibida su reproducción total o parcial sin autorización expresa.
+        </p>
+        <p>
+          El software y productos desarrollados para clientes son propiedad del cliente
+          una vez recibido el pago total, salvo estipulación diferente en el contrato.
+        </p>
+
+        <h6 class="fw-bold mt-3">5. Limitación de Responsabilidad</h6>
+        <p>
+          RAGtional no será responsable de daños indirectos, lucro cesante o pérdida de datos
+          derivados del uso del sitio web. La responsabilidad máxima en relación con proyectos
+          contratados se limita al valor pagado por el servicio específico, salvo dolo o culpa grave.
+        </p>
+
+        <h6 class="fw-bold mt-3">6. Tratamiento de Datos en el Marco de Proyectos</h6>
+        <p>
+          Para proyectos que involucren tratamiento de datos personales de terceros, RAGtional
+          actuará como <strong>Encargado del Tratamiento</strong> según la Ley 1581 de 2012,
+          procesando datos únicamente según las instrucciones del cliente (Responsable).
+          Se suscribirá el acuerdo de tratamiento de datos correspondiente.
+        </p>
+
+        <h6 class="fw-bold mt-3">7. Ley Aplicable y Resolución de Conflictos</h6>
+        <p>
+          Los presentes términos se rigen por las leyes de la <strong>República de Colombia</strong>.
+          En caso de controversia, las partes intentarán una solución amigable. De no ser posible,
+          se someterán a los jueces competentes de Colombia o al mecanismo alternativo de resolución
+          de conflictos pactado en el contrato de servicios.
+        </p>
+
+        <h6 class="fw-bold mt-3">8. Contacto</h6>
+        <p>Para consultas sobre estos términos: WhatsApp +57 314 479 8482</p>
+
+        <p class="small text-muted mt-4">
+          Normas aplicables: Ley 527 de 1999 · Ley 1480 de 2011 · Ley 23 de 1982 · Decisión Andina 351 de 1993
+        </p>
+      </div>
+      <div class="modal-footer border-0">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">{t.legal.gotIt}</button>
+      </div>
+    </div>
+  </div>
+</div>

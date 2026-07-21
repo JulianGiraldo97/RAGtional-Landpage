@@ -1,0 +1,244 @@
+---
+import type { Lang } from '../i18n/ui';
+import { getTranslations, PHONE, PHONE_DISPLAY, SOCIAL, WHATSAPP_URL } from '../i18n/utils';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = getTranslations(lang);
+const currentYear = new Date().getFullYear();
+
+const solutionsLinks = [
+  { name: t.solutions.items.aiAgents.title, href: '#solutions' },
+  { name: t.solutions.items.ragPipelines.title, href: '#solutions' },
+  { name: t.solutions.items.n8nWorkflows.title, href: '#solutions' },
+  { name: t.solutions.items.customChatbots.title, href: '#solutions' },
+];
+const servicesLinks = [
+  { name: t.services.items.webDevelopment.title, href: '#services' },
+  { name: t.services.items.mobileDevelopment.title, href: '#services' },
+  { name: t.services.items.salesforceConsulting.title, href: '#services' },
+];
+const navigateLinks = [
+  { name: t.navbar.useCases, href: '#use-cases' },
+  { name: t.navbar.technology, href: '#technology' },
+  { name: t.navbar.faq, href: '#faq' },
+  { name: t.navbar.contact, href: '#contact' },
+];
+const legalLinks = [
+  { name: t.legal.privacyLink, modalId: 'modalPrivacy' },
+  { name: t.legal.termsLink, modalId: 'modalTerms' },
+  { name: t.legal.cookiesLink, modalId: 'modalCookies' },
+];
+const socialLinks = [
+  { name: 'LinkedIn', icon: 'fab fa-linkedin', href: SOCIAL.linkedin },
+  { name: 'GitHub', icon: 'fab fa-github', href: SOCIAL.github },
+  { name: 'YouTube', icon: 'fab fa-youtube', href: SOCIAL.youtube },
+];
+---
+<footer class="footer bg-dark text-light py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 mb-4">
+        <div class="footer-brand mb-3">
+          <h4 class="fw-bold">
+            <span class="text-primary">RAG</span>tional
+          </h4>
+        </div>
+        <p class="mb-3 small">{t.footer.description}</p>
+        <div class="social-links mb-3">
+          {socialLinks.map((s) => (
+            <a
+              href={s.href}
+              class="social-link me-2"
+              aria-label={s.name}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class={`${s.icon} fa-lg`}></i>
+            </a>
+          ))}
+        </div>
+        <span class="badge bg-secondary text-light fw-normal small">
+          <i class="fas fa-map-marker-alt me-1"></i>Colombia · EN / ES
+        </span>
+      </div>
+
+      <div class="col-lg-9">
+        <div class="row">
+          <div class="col-md-3 col-sm-6 mb-4">
+            <h6 class="fw-bold mb-3">{t.footer.solutions}</h6>
+            <ul class="list-unstyled">
+              {solutionsLinks.map((link) => (
+                <li class="mb-2">
+                  <a href={link.href} class="footer-link">{link.name}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div class="col-md-3 col-sm-6 mb-4">
+            <h6 class="fw-bold mb-3">{t.footer.services}</h6>
+            <ul class="list-unstyled">
+              {servicesLinks.map((link) => (
+                <li class="mb-2">
+                  <a href={link.href} class="footer-link">{link.name}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div class="col-md-3 col-sm-6 mb-4">
+            <h6 class="fw-bold mb-3">{t.footer.company}</h6>
+            <ul class="list-unstyled">
+              {navigateLinks.map((link) => (
+                <li class="mb-2">
+                  <a href={link.href} class="footer-link">{link.name}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div class="col-md-3 col-sm-6 mb-4">
+            <h6 class="fw-bold mb-3">{t.footer.legal}</h6>
+            <ul class="list-unstyled">
+              {legalLinks.map((link) => (
+                <li class="mb-2">
+                  <button
+                    type="button"
+                    class="footer-link btn btn-link p-0 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target={`#${link.modalId}`}
+                  >{link.name}</button>
+                </li>
+              ))}
+            </ul>
+            <p class="small mt-3 legal-mini">
+              Ley 1581/2012<br />Ley 1480/2011<br />Ley 527/1999
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-4 pt-4 border-top border-secondary">
+      <div class="col-lg-6 mb-3">
+        <h6 class="fw-bold mb-3">{t.footer.contactUs}</h6>
+        <div class="d-flex flex-wrap gap-3">
+          <a href={`tel:${PHONE}`} class="contact-pill">
+            <i class="fas fa-phone me-2"></i>{PHONE_DISPLAY}
+          </a>
+          <a href={WHATSAPP_URL} class="contact-pill contact-pill--whatsapp" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-whatsapp me-2"></i>WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="col-lg-6 mb-3">
+        <h6 class="fw-bold mb-3">{t.footer.newsletter}</h6>
+        <p class="mb-3 small">{t.footer.newsletterDescription}</p>
+        <div class="input-group">
+          <input
+            type="email"
+            class="form-control"
+            placeholder={t.footer.newsletterPlaceholder}
+            aria-label="Email"
+          />
+          <button class="btn btn-primary" type="button">{t.footer.subscribe}</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-4 pt-3 border-top border-secondary">
+      <div class="col-md-6 mb-2">
+        <p class="mb-0 small">© {currentYear} RAGtional. {t.footer.allRightsReserved}</p>
+      </div>
+      <div class="col-md-6 text-md-end mb-2">
+        <p class="mb-0 small">
+          {t.footer.madeWithLove} <i class="fas fa-heart text-danger"></i> {t.footer.forAICommunity}
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: linear-gradient(135deg, #0d0d0d 0%, #1a1a2e 100%);
+  }
+  .footer-link {
+    color: rgba(255, 255, 255, 0.65) !important;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  .footer-link:hover {
+    color: var(--bs-primary) !important;
+  }
+  .social-link {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    text-align: center;
+    line-height: 40px;
+    transition: all 0.3s ease;
+    color: rgba(255,255,255,0.8);
+    font-size: 1rem;
+  }
+  .social-link:hover {
+    background: var(--bs-primary);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
+  }
+  .contact-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.45rem 1rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: rgba(255,255,255,0.85);
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  .contact-pill:hover {
+    background: rgba(0,123,255,0.2);
+    border-color: var(--bs-primary);
+    color: white;
+  }
+  .contact-pill--whatsapp:hover {
+    background: rgba(37,211,102,0.15);
+    border-color: #25D366;
+  }
+  .footer h6 {
+    color: var(--bs-light) !important;
+  }
+  .border-secondary {
+    border-color: rgba(255, 255, 255, 0.12) !important;
+  }
+  .legal-mini {
+    color: rgba(255,255,255,0.4);
+    line-height: 1.4;
+  }
+  .input-group .form-control {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--bs-light);
+  }
+  .input-group .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
+  .input-group .form-control:focus {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: var(--bs-primary);
+    color: var(--bs-light);
+    box-shadow: none;
+  }
+</style>

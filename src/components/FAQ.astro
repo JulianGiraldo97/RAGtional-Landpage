@@ -1,0 +1,100 @@
+---
+import type { Lang } from '../i18n/ui';
+import { getTranslations } from '../i18n/utils';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = getTranslations(lang);
+---
+<section id="faq" class="py-5">
+  <div class="container">
+    <div class="row text-center mb-5">
+      <div class="col-lg-7 mx-auto">
+        <h2 class="display-5 fw-bold mb-3">{t.faq.title}</h2>
+        <p class="lead text-muted">{t.faq.description}</p>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="accordion accordion-flush faq-accordion" id="faqAccordion">
+          {t.faq.items.map((faq, index) => {
+            const id = `faq-${index + 1}`;
+            return (
+              <div class="accordion-item faq-item">
+                <h3 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed fw-semibold"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target={`#${id}`}
+                    aria-expanded="false"
+                    aria-controls={id}
+                  >
+                    <span class="faq-number me-3">{String(index + 1).padStart(2, '0')}</span>
+                    {faq.q}
+                  </button>
+                </h3>
+                <div id={id} class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body text-muted ps-5">{faq.a}</div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        <div class="text-center mt-5">
+          <p class="text-muted mb-3">{t.faq.stillHaveQuestions}</p>
+          <a class="btn btn-primary px-4" href="#contact">
+            <i class="fas fa-comments me-2"></i>{t.navbar.getDemo}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq-accordion .faq-item {
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    margin-bottom: 0;
+  }
+  :global([data-bs-theme="dark"]) .faq-accordion .faq-item {
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+  }
+  .faq-accordion .accordion-button {
+    background: transparent;
+    color: inherit;
+    padding: 1.25rem 0;
+    font-size: 1rem;
+    box-shadow: none;
+  }
+  .faq-accordion .accordion-button:not(.collapsed) {
+    color: var(--bs-primary);
+    background: transparent;
+    box-shadow: none;
+  }
+  .faq-accordion .accordion-button::after {
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+  .faq-number {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--bs-primary);
+    opacity: 0.6;
+    min-width: 24px;
+  }
+  .faq-accordion .accordion-body {
+    padding-bottom: 1.25rem;
+    padding-top: 0;
+    line-height: 1.7;
+  }
+  :global([data-bs-theme="dark"]) .faq-accordion .accordion-button {
+    color: var(--bs-light);
+  }
+  :global([data-bs-theme="dark"]) .faq-accordion .accordion-button:not(.collapsed) {
+    color: #6ea8fe;
+  }
+</style>

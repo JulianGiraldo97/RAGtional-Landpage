@@ -1,0 +1,96 @@
+---
+import type { Lang } from '../../i18n/ui';
+import { getTranslations } from '../../i18n/utils';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = getTranslations(lang);
+---
+<div class="modal fade" id="modalCookies" tabindex="-1" aria-labelledby="modalCookiesLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header border-0 pb-0">
+        <h5 class="modal-title fw-bold" id="modalCookiesLabel">{t.legal.cookiesTitle}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body px-4 py-3 legal-content">
+        <p class="text-muted small">Última actualización: 23 de abril de 2026</p>
+
+        <h6 class="fw-bold mt-3">1. ¿Qué son las cookies?</h6>
+        <p>
+          Las cookies son pequeños archivos de texto almacenados en su dispositivo al visitar un sitio web.
+          Permiten recordar preferencias y recopilar información de navegación.
+        </p>
+
+        <h6 class="fw-bold mt-3">2. Cookies que utilizamos</h6>
+
+        <p><strong>Cookies de Analítica (Google Analytics 4 — GA4)</strong></p>
+        <ul>
+          <li><code>_ga</code>, <code>_ga_*</code>: Identifican sesiones únicas de usuario (vigencia: 2 años)</li>
+          <li>Recopilan: páginas visitadas, duración, fuente de tráfico, dispositivo</li>
+          <li>Proveedor: Google LLC — datos anonimizados antes de almacenarse</li>
+        </ul>
+
+        <p><strong>Cookies de Publicidad (Google Ads)</strong></p>
+        <ul>
+          <li><code>_gcl_au</code>: Seguimiento de conversiones de campañas (vigencia: 90 días)</li>
+          <li>Proveedor: Google LLC</li>
+        </ul>
+
+        <p><strong>Almacenamiento Funcional</strong></p>
+        <ul>
+          <li><code>theme</code> (localStorage): Guarda la preferencia de tema claro/oscuro</li>
+        </ul>
+
+        <h6 class="fw-bold mt-3">3. Base legal</h6>
+        <p>
+          El uso de cookies de analítica y publicidad se realiza con base en el consentimiento del
+          usuario. El almacenamiento estrictamente funcional (tema) no requiere consentimiento al
+          ser necesario para el funcionamiento básico del sitio.
+        </p>
+
+        <h6 class="fw-bold mt-3">4. Cómo controlar o rechazar las cookies</h6>
+        <p>Puede gestionar las cookies desde su navegador:</p>
+        <ul>
+          <li><strong>Chrome:</strong> Configuración → Privacidad y seguridad → Cookies</li>
+          <li><strong>Firefox:</strong> Preferencias → Privacidad y seguridad</li>
+          <li><strong>Safari:</strong> Preferencias → Privacidad</li>
+          <li><strong>Edge:</strong> Configuración → Cookies y permisos del sitio</li>
+        </ul>
+        <p>
+          También puede optar por no participar en Google Analytics instalando el complemento:{' '}
+          <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">
+            Google Analytics Opt-out
+          </a>
+        </p>
+
+        <h6 class="fw-bold mt-3">5. Más información</h6>
+        <p>
+          Para cualquier consulta sobre nuestra política de cookies, contáctenos por
+          WhatsApp al +57 314 479 8482.
+        </p>
+
+        <p class="small text-muted mt-4">
+          Marco de referencia: Ley 1581 de 2012 · Resolución 2225 de 2022 (MinTIC) · GDPR Art. 6 (aplicable a usuarios europeos)
+        </p>
+      </div>
+      <div class="modal-footer border-0">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">{t.legal.gotIt}</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style is:global>
+  .legal-content p { margin-bottom: 0.65rem; line-height: 1.7; }
+  .legal-content h6 { color: var(--bs-primary); margin-top: 1.2rem; }
+  .legal-content ul { padding-left: 1.4rem; }
+  .legal-content ul li { margin-bottom: 0.3rem; }
+  .legal-content code {
+    background: rgba(0,123,255,0.08);
+    padding: 0.1rem 0.35rem;
+    border-radius: 4px;
+    font-size: 0.85em;
+    color: var(--bs-primary);
+  }
+</style>

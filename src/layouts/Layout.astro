@@ -1,0 +1,103 @@
+---
+import { getLangFromUrl, getTranslations, localizedPath } from '../i18n/utils';
+import '../styles/global.css';
+
+const lang = getLangFromUrl(Astro.url);
+const t = getTranslations(lang);
+
+const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+const ogImage = new URL('/og-image.svg', Astro.site).toString();
+const altEn = new URL(localizedPath('en', '/'), Astro.site).toString();
+const altEs = new URL(localizedPath('es', '/'), Astro.site).toString();
+---
+<html lang={t.htmlLang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>{t.meta.title}</title>
+    <meta name="description" content={t.meta.description} />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={canonical} />
+
+    <link rel="alternate" hreflang="en" href={altEn} />
+    <link rel="alternate" hreflang="es" href={altEs} />
+    <link rel="alternate" hreflang="x-default" href={altEn} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={t.meta.title} />
+    <meta property="og:description" content={t.meta.description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content={t.ogLocale} />
+    <meta property="og:locale:alternate" content={lang === 'en' ? 'es_ES' : 'en_US'} />
+    <meta property="og:site_name" content="RAGtional" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={t.meta.title} />
+    <meta name="twitter:description" content={t.meta.description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: 'RAGtional',
+      url: Astro.site?.toString(),
+      logo: new URL('/favicon-32x32.png', Astro.site).toString(),
+      description: t.meta.description,
+      contactPoint: [
+        { '@type': 'ContactPoint', telephone: '+57-314-479-8482', contactType: 'customer service', availableLanguage: ['English', 'Spanish'] },
+        { '@type': 'ContactPoint', telephone: '+57-314-479-8482', contactType: 'sales', availableLanguage: ['English', 'Spanish'] },
+      ],
+      sameAs: [
+        'https://www.linkedin.com/company/ragtional/about/',
+        'https://github.com/JulianGiraldo97',
+        'https://www.youtube.com/@JGiraldoAI',
+      ],
+      hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: 'Technology Services',
+        itemListElement: [
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Web Development' } },
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Mobile Development' } },
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Salesforce Consulting' } },
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'AI Agents' } },
+        ],
+      },
+    })} />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+
+    <script is:inline>
+      (function () {
+        try {
+          var saved = localStorage.getItem('theme');
+          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          var theme = saved ? saved : (prefersDark ? 'dark' : 'light');
+          document.documentElement.setAttribute('data-bs-theme', theme);
+        } catch (_) {
+          document.documentElement.setAttribute('data-bs-theme', 'light');
+        }
+      })();
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5P4XM7JV4X"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-5P4XM7JV4X');
+      gtag('config', 'AW-603368531');
+    </script>
+  </head>
+  <body>
+    <slot />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

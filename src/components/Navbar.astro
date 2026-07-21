@@ -1,0 +1,105 @@
+---
+import type { Lang } from '../i18n/ui';
+import { getTranslations, localizedPath } from '../i18n/utils';
+import logo from '../assets/logo.svg?raw';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = getTranslations(lang);
+const otherLang: Lang = lang === 'en' ? 'es' : 'en';
+const otherHref = localizedPath(otherLang, '/');
+
+const links = [
+  { name: t.navbar.solutions, href: '#solutions' },
+  { name: t.navbar.services, href: '#services' },
+  { name: t.navbar.technology, href: '#technology' },
+  { name: t.navbar.useCases, href: '#use-cases' },
+  { name: t.navbar.faq, href: '#faq' },
+  { name: t.navbar.contact, href: '#contact' },
+];
+---
+<nav class="navbar navbar-expand-lg fixed-top ragtional-navbar">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href={localizedPath(lang, '/')} aria-label="RAGtional">
+      <span class="brand-logo" set:html={logo}></span>
+    </a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#mainNav"
+      aria-controls="mainNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        {links.map((link) => (
+          <li class="nav-item">
+            <a class="nav-link px-3" href={link.href}>{link.name}</a>
+          </li>
+        ))}
+      </ul>
+
+      <div class="d-flex align-items-center gap-3">
+        <a
+          class="btn btn-outline-secondary btn-sm"
+          href={otherHref}
+          title={t.navbar.toggleLangTitle}
+          aria-label={t.navbar.toggleLangTitle}
+        >{t.navbar.toggleLangLabel}</a>
+        <button
+          id="themeToggle"
+          class="btn btn-outline-primary btn-sm"
+          type="button"
+          aria-label={t.navbar.toggleTheme}
+        >
+          <i class="fas fa-moon" data-icon-dark="fa-sun" data-icon-light="fa-moon"></i>
+        </button>
+        <a class="btn btn-primary btn-sm" href="#contact">{t.navbar.getDemo}</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script is:inline>
+  (function () {
+    var btn = document.getElementById('themeToggle');
+    if (!btn) return;
+    var icon = btn.querySelector('i');
+    function syncIcon() {
+      var theme = document.documentElement.getAttribute('data-bs-theme') || 'light';
+      if (!icon) return;
+      icon.classList.remove('fa-sun', 'fa-moon');
+      icon.classList.add(theme === 'dark' ? 'fa-sun' : 'fa-moon');
+    }
+    syncIcon();
+    btn.addEventListener('click', function () {
+      var current = document.documentElement.getAttribute('data-bs-theme') || 'light';
+      var next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-bs-theme', next);
+      try { localStorage.setItem('theme', next); } catch (_) {}
+      syncIcon();
+    });
+  })();
+</script>
+
+<style is:global>
+  .ragtional-navbar {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  [data-bs-theme="dark"] .ragtional-navbar {
+    background-color: rgba(33, 37, 41, 0.95);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .brand-logo svg {
+    height: 40px;
+    width: auto;
+  }
+</style>

@@ -1,0 +1,96 @@
+---
+import type { Lang } from '../i18n/ui';
+import { getTranslations } from '../i18n/utils';
+import InfoModal from './InfoModal.astro';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = getTranslations(lang);
+
+const solutions = [
+  { key: 'n8nWorkflows', icon: 'fas fa-project-diagram', ...t.solutions.items.n8nWorkflows },
+  { key: 'ragPipelines', icon: 'fas fa-database', ...t.solutions.items.ragPipelines },
+  { key: 'aiAgents', icon: 'fas fa-robot', ...t.solutions.items.aiAgents },
+  { key: 'customChatbots', icon: 'fas fa-comments', ...t.solutions.items.customChatbots },
+];
+---
+<section id="solutions" class="py-5">
+  <div class="container">
+    <div class="row text-center mb-5">
+      <div class="col-lg-8 mx-auto">
+        <h2 class="display-5 fw-bold mb-3">{t.solutions.title}</h2>
+        <p class="lead text-muted">{t.solutions.description}</p>
+      </div>
+    </div>
+
+    <div class="row">
+      {solutions.map((s) => (
+        <div class="col-lg-6 col-xl-3 mb-4">
+          <div class="card h-100 solution-card border-0 shadow-sm">
+            <div class="card-body p-4">
+              <div class="solution-icon mb-3">
+                <i class={`${s.icon} fa-2x text-primary`}></i>
+              </div>
+              <h5 class="card-title fw-bold mb-3">{s.title}</h5>
+              <p class="card-text text-muted mb-3">{s.description}</p>
+              <ul class="list-unstyled">
+                {s.features.map((feature) => (
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i>{feature}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div class="card-footer bg-transparent border-0">
+              <button
+                type="button"
+                class="btn btn-outline-primary w-100"
+                data-bs-toggle="modal"
+                data-bs-target={`#solutionModal-${s.key}`}
+              >{t.solutions.learnMore}</button>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  {solutions.map((s) => (
+    <InfoModal
+      id={`solutionModal-${s.key}`}
+      lang={lang}
+      title={s.title}
+      description={s.detailedDescription}
+      icon={s.icon}
+      features={s.features}
+      ctaText={t.solutions.getStarted}
+    />
+  ))}
+</section>
+
+<style>
+  .solution-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 16px;
+  }
+  .solution-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 123, 255, 0.15) !important;
+  }
+  .solution-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(0, 123, 255, 0.1), rgba(102, 16, 242, 0.1));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  :global([data-bs-theme="dark"]) .solution-card {
+    background: var(--bs-dark);
+    color: var(--bs-light);
+  }
+  :global([data-bs-theme="dark"]) .solution-icon {
+    background: linear-gradient(135deg, rgba(0, 123, 255, 0.2), rgba(102, 16, 242, 0.2));
+  }
+</style>

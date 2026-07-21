@@ -4,7 +4,11 @@
       "Bash(grep -E \"\\\\.\\(tsx?|jsx?\\)$\")",
       "Bash(mkdir -p \"/Users/juliangiraldo/Documents/Obsidian/Knowledge Base/Personal/RAGtional/Landing Page\")",
       "Bash(mkdir -p \"/Users/juliangiraldo/Documents/Obsidian/Knowledge Base/Personal/RAGtional/Strategy\")",
-      "Bash(npx tsc *)"
+      "Bash(npx tsc *)",
+      "Bash(ls -la \"/Users/juliangiraldo/Documents/Obsidian/Knowledge Base/Personal/RAGtional\" 2>/dev/null || echo \"not found\")",
+      "Bash(npm install *)",
+      "Bash(npm approve-scripts *)",
+      "Bash(npm run *)"
     ]
   }
 }
